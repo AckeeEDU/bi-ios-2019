@@ -10,6 +10,9 @@ example(of: "Struct declaration") {
     }
     
     // Instantiate
+    
+    let person = Person(firstName: "Jan", lastName: "Schwarz")
+    print(person)
 }
 //: ### Explicit initializer
 example(of: "Struct with explicit initializer") {
@@ -24,6 +27,8 @@ example(of: "Struct with explicit initializer") {
     }
     
     // Initialize
+    let person = Person(firstName: "Jan")
+    print(person)
 }
 //: ### Mutating
 example(of: "Mutating structure") {
@@ -33,8 +38,11 @@ example(of: "Mutating structure") {
     }
 
     // Instantiate
-    // Try to mutate
+    let person1 = Person1(firstName: "Jan", lastName: "Schwarz")
     
+    // Try to mutate
+    //person1.firstName = "Honza"
+
     struct Person2 {
         var firstName: String
         var lastName: String
@@ -45,7 +53,13 @@ example(of: "Mutating structure") {
     }
     
     // Instatntiate
+    var person2 = Person2(firstName: "", lastName: "")
+    person2.firstName = "Jan"
+    print(person2)
+    
     // Mutate with mutating function
+    person2.update(firstName: "Honza")
+    print(person2)
 }
 //: ### Value type
 example(of: "Value type") {
@@ -55,8 +69,16 @@ example(of: "Value type") {
     }
 
     // Instantiate
+    let person1 = Person(firstName: "Jan", lastName: "")
+    
     // Copy instance
+    var person2 = person1
+    
     // Modify name
+    person2.firstName = "Honza"
+    
+    print(person1.firstName)
+    print(person2.firstName)
 }
 //: ## Classes
 //: ### Declaration
@@ -72,6 +94,8 @@ example(of: "Class declaration") {
     }
     
     // Instantiate
+    let person = Person(firstName: "", lastName: "")
+    print(person)
 }
 //: ### Mutating
 example(of: "Mutating class") {
@@ -86,8 +110,10 @@ example(of: "Mutating class") {
     }
     
     // Instantiate
+    let person1 = Person1(firstName: "", lastName: "")
     // Try to mutate
-    
+    // person1.firstName = "Jan"
+
     class Person2 {
         var firstName: String
         var lastName: String
@@ -103,8 +129,14 @@ example(of: "Mutating class") {
     }
     
     // Instatntiate
+    let person2 = Person2(firstName: "", lastName: "")
+
     // Mutate
+    person2.firstName = "Jan"
+    
     // Mutate with mutating function
+    person2.update(firstName: "Honza")
+    print(person2.firstName)
 }
 //: ### Reference type
 example(of: "Reference type") {
@@ -119,9 +151,16 @@ example(of: "Reference type") {
     }
     
     // Instantiate
+    let person1 = Person(firstName: "", lastName: "")
+    
     // Copy instance
+    let person2 = person1
+
     // Modify name
-}
+    person2.firstName = "Jan"
+    
+    print(person1.firstName)
+    print(person2.firstName)}
 //: ### Inheritance
 example(of: "Inheritance") {
     class Person {
@@ -143,14 +182,31 @@ example(of: "Inheritance") {
         }
     }
     
-    // STRUCTURES CAN'T INHERIT
     // Instantiate
+    let person = UppercasedPerson()
+    print(person.firstName)
+
+    // STRUCTURES CAN'T INHERIT
 }
 //: ## Enumerations
 //: ### Declaration
 example(of: "Enum declaration") {
     // Enum with iOS languages
+    enum Langauge {
+        case swift
+        case objc
+        case c
+    }
+    
     // Assign to variable
+    let lang = Langauge.swift
+    
     // Switch
+    switch lang {
+    case .swift:
+        print("Good language")
+    default:
+        print("Bad")
+    }
 }
 //: [Next](@next)
