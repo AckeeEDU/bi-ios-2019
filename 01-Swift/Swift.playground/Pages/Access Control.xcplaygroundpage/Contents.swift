@@ -6,6 +6,7 @@ struct Assignment {
     private var id: String
     internal var title: String
     fileprivate var description: String
+    // ACCESS CONTROL KEYWORDS WITH '(set)' SUFFIX MODIFY JUST A PROPERTY SETTER
     private(set) var completed: Bool
     
     init(id: String = "1234", title: String = "Title", description: String = "Long description", completed: Bool = false) {
@@ -21,32 +22,55 @@ struct Assignment {
 }
 //: ### Private
 example(of: "Private") {
-    // Initialize
-    // Access id
-    // Access completed
-    // Modify completed
+    var assignment = Assignment()
+    
+    // assignment.id = "1"
+    // assignment.completed = true
+    assignment.complete()
+    
+    print(assignment)
 }
 //: ### Fileprivate and Internal
 example(of: "Fileprivate and Internal") {
-    // Initialze
-    // Set description
-    // Set internal
-    // Initialize open assignment
-    // Access id
+    // It is difficult to demonstrate the difference between fileprivate and internal in Playgrounds
+    // Fileprivate property is visible to every class, struct etc. within one file
+    // Internal is visible to every class, struct etc. within whole module
+    
+    // INTERNAL IS A DEFFAULT ACCESS CONTROL LEVEL
+    // I.E. WHEN YOU DON'T SPECIFY AN ACCESS CONTROL LEVEL FOR PROPERTY, CLASS, STRUCT ETC. IT IS INTERNAL
+    var assignment = Assignment()
+    
+    assignment.description = "New description"
+    print(assignment.description)
+    
+    // YOU CAN FIND AN IMPLEMENTATION OF THE 'OpenAssignment' IN 'Sources/Common.swift'
+    // FROM THE COMPILER POINT OF VIEW THE 'OpenAssignment' IS DEFINED IN A DIFFERENT MODULE
+    let openAssignment = OpenAssignment()
+    // openAssignment.id = "123456"
+    print(openAssignment)
 }
 //: ### Public
 example(of: "Public") {
-    // Instantiate OpenAssignment
-    // Use title
+    // PUBLIC PROPERTIES AND METHODS ARE VISIBLE TO DIFFERENT MODULES BUT THEY CANNOT BE OVERRIDEN
+    let assignment = OpenAssignment()
+    
+    //print(assignment.id)
+    print(assignment.title)
 }
 //: ### Open
 example(of: "Open") {
+    // OPEN PROPERTIES AND METHODS ARE VISIBLE TO DIFFERENT MODULES, PLUS, THEY CAN BE OVERRIDEN
     class SwiftAssignment: OpenAssignment {
-        // Override unique description
-
-        // Override desc
+        //        override var uniqueDescription: String {
+        //            return "unique"
+        //        }
+        
+        override func desc() -> String {
+            return "No description"
+        }
     }
     
-    // Instantiate
+    let assignment = SwiftAssignment()
+    print(assignment.desc())
 }
 //: [Next](@next)
