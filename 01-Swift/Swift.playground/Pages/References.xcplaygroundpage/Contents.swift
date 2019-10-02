@@ -18,9 +18,18 @@ example(of: "Reference counting") {
     }
     
     // First instance
+    var person1: Person? = Person(name: "Jan")
+
     // Assign to second variable
+    var person2: Person? = person1
+
     // Set to nil
+    print("Setting person1 to nil")
+    person1 = nil
+
     // Set to nil
+    print("Setting person2 to nil")
+    person2 = nil
 }
 //: ### Retain cycle
 example(of: "Retain cycle") {
@@ -55,8 +64,16 @@ example(of: "Retain cycle") {
     }
     
     // Create instances
+    var person: Person? = Person(name: "Jan")
+    var image: ProfileImage? = ProfileImage(url: nil)
+
     // Point to each other
+    person?.image = image
+    image?.person = person
+
     // Set to nil
+    person = nil
+    image = nil
 }
 //: ### Weak reference
 example(of: "Weak reference") {
@@ -89,8 +106,15 @@ example(of: "Weak reference") {
     }
     
     // Create instances
+    var person: Person? = Person(name: "Jan")
+    var image: ProfileImage? = ProfileImage(url: nil)
+
     // Point to each other
+    person?.image = image
+    image?.person = person
+
     // Set to nil
-    // Unowned
+    person = nil
+    image = nil
 }
 //: [Next](@next)
