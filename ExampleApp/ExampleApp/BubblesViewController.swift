@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BubblesViewController.swift
 //  ExampleApp
 //
 //  Created by Jan Misar on 09/10/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BubblesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
