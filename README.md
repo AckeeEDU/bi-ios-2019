@@ -1,9 +1,11 @@
 # bi-ios-2019
 
 ## 1. Úvod
-branch: ???
+branch: není
 
-`// TODO:`
+- úvod do mobilního vývoje
+- úvod do platformy iOS
+- ukázka prostředí Xcode
 
 ## 2. Swift
 branch: 01-swift
