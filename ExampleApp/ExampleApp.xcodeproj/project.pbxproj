@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B43BF0A2357186500ABDBF6 /* AutolayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */; };
 		886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */; };
 		886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */; };
 		886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutViewController.swift; sourceTree = "<group>"; };
 		886F66E9234DBD9600FAE4D6 /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */,
 				886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */,
 				886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */,
+				4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */,
 				886F66F2234DBD9600FAE4D6 /* Main.storyboard */,
 				886F66F5234DBD9A00FAE4D6 /* Assets.xcassets */,
 				886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */,
 				886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */,
 				886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */,
+				4B43BF0A2357186500ABDBF6 /* AutolayoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
