@@ -29,3 +29,15 @@ branch: 03-views
 - Views v kódu - CGRect, addSubview(), removeFromSuperView()
 - Frame vs. bounds [Frame vs Bounds in iOS - Suragch - Medium](https://medium.com/@suragch/frame-vs-bounds-in-ios-107990ad53ee)
 - [Pixels vs. points](https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions)
+
+## 4. Autolayout
+branch: 04-autolayout
+
+- Autolayout v interface builderu
+- UIStackView (allignment, distribution) 
+- `intrinsicContentSize`, `contentHugging` a `contentCompressionResistance`
+- Autolayout v kódu (NSLayoutConstraint a `translatesAutoresizingMaskIntoConstraints`)
+- `additionalSafeAreaInsets`
+- Úprava constraints v runtime (update konstant)
+- Jednoduché animování autolayoutu
+
