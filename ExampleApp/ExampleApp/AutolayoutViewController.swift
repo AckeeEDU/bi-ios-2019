@@ -10,13 +10,16 @@ import UIKit
 
 class AutolayoutViewController: UIViewController {
     
+    // MARK: - UI
     @IBOutlet weak var weatherHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var weatherRow: UIView!
     
+    // MARK: - Private properties
     private var isExtended = false
     private var labelTopConstraint: NSLayoutConstraint?
     private var labelBottomConstraint: NSLayoutConstraint?
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -31,13 +34,15 @@ class AutolayoutViewController: UIViewController {
 private extension AutolayoutViewController {
     
     func setupUI() {
+        // Label creation
         let label = UILabel()
         label.text = "FROM CODE: Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text."
         label.textColor = .red
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false // IMPORTANT!
         view.addSubview(label)
         
+        // Label's constraints definition
         let margin = view.safeAreaLayoutGuide
         let labelTopConst = label.topAnchor.constraint(equalTo: weatherRow.bottomAnchor)
         labelTopConst.priority = .defaultLow
@@ -53,6 +58,7 @@ private extension AutolayoutViewController {
             label.trailingAnchor.constraint(equalTo: margin.trailingAnchor)
         ])
         
+        // Custom left and right margin for safe area
         additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
