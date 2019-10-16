@@ -14,6 +14,8 @@ class AutolayoutViewController: UIViewController {
     @IBOutlet weak var weatherRow: UIView!
     
     private var isExtended = false
+    private var labelTopConstraint: NSLayoutConstraint?
+    private var labelBottomConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +39,17 @@ private extension AutolayoutViewController {
         view.addSubview(label)
         
         let margin = view.safeAreaLayoutGuide
+        let labelTopConst = label.topAnchor.constraint(equalTo: weatherRow.bottomAnchor)
+        labelTopConst.priority = .defaultLow
+        let labelBottomConst = label.bottomAnchor.constraint(equalTo: margin.bottomAnchor)
+        labelBottomConst.priority = .defaultHigh
+        labelTopConstraint = labelTopConst
+        labelBottomConstraint = labelBottomConst
+        
         NSLayoutConstraint.activate([
+            labelTopConst,
             label.leadingAnchor.constraint(equalTo: margin.leadingAnchor),
-            label.bottomAnchor.constraint(equalTo: margin.bottomAnchor),
+            labelBottomConst,
             label.trailingAnchor.constraint(equalTo: margin.trailingAnchor)
         ])
         
@@ -49,6 +59,8 @@ private extension AutolayoutViewController {
     func toggleWeatherRow() {
         isExtended.toggle()
         weatherHeightConstraint.constant = isExtended ? 150 : 50
+        labelTopConstraint?.priority = isExtended ? .defaultHigh : .defaultLow
+        labelBottomConstraint?.priority = isExtended ? .defaultLow : .defaultHigh
         
         UIView.animate(withDuration: 0.3) {
             self.weatherRow.backgroundColor = self.isExtended ? .systemRed : .systemYellow
