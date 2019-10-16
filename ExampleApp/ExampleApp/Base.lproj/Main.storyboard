@@ -23,6 +23,9 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTouchButton:" destination="Zjm-yE-Rh0" eventType="touchUpInside" id="7wh-0c-xWc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5c8-Ax-mcA">
                                 <rect key="frame" x="20" y="154" width="335" height="61"/>
@@ -118,6 +121,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xsP-R7-JXg"/>
                     </view>
+                    <connections>
+                        <outlet property="weatherHeightConstraint" destination="izD-kM-UEb" id="0IL-sq-eWl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02l-11-pte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

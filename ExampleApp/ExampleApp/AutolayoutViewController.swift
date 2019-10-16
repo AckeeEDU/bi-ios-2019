@@ -10,9 +10,17 @@ import UIKit
 
 class AutolayoutViewController: UIViewController {
     
+    @IBOutlet weak var weatherHeightConstraint: NSLayoutConstraint!
+    
+    private var isExtended = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    @IBAction func didTouchButton(_ sender: Any) {
+        toggleWeatherRow()
     }
 }
 
@@ -35,6 +43,15 @@ private extension AutolayoutViewController {
         ])
         
         additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
+    
+    func toggleWeatherRow() {
+        isExtended.toggle()
+        weatherHeightConstraint.constant = isExtended ? 150 : 50
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
