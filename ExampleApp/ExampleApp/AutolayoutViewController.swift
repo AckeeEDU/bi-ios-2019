@@ -11,6 +11,7 @@ import UIKit
 class AutolayoutViewController: UIViewController {
     
     @IBOutlet weak var weatherHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var weatherRow: UIView!
     
     private var isExtended = false
     
@@ -50,6 +51,7 @@ private extension AutolayoutViewController {
         weatherHeightConstraint.constant = isExtended ? 150 : 50
         
         UIView.animate(withDuration: 0.3) {
+            self.weatherRow.backgroundColor = self.isExtended ? .systemRed : .systemYellow
             self.view.layoutIfNeeded()
         }
     }
