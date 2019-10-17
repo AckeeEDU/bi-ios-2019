@@ -38,6 +38,7 @@ branch: 04-autolayout
 - `intrinsicContentSize`, `contentHugging` a `contentCompressionResistance`
 - Autolayout v kódu (NSLayoutConstraint a `translatesAutoresizingMaskIntoConstraints`)
 - `additionalSafeAreaInsets`
-- Úprava constraints v runtime (update konstant)
+- Úprava constraints v runtime (update constant)
 - Jednoduché animování autolayoutu
+- [https://www.wtfautolayout.com](https://www.wtfautolayout.com) – vizualizace logu rozbitých constraints
 
