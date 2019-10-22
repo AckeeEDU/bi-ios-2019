@@ -16,6 +16,7 @@
 		886F66F6234DBD9A00FAE4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F5234DBD9A00FAE4D6 /* Assets.xcassets */; };
 		886F66F9234DBD9A00FAE4D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */; };
 		B4DEE2C9235F8F190087DFAE /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */; };
+		B4DEE2CB235F92AA0087DFAE /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		886F66F8234DBD9A00FAE4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		886F66FA234DBD9A00FAE4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */,
 				886F66FA234DBD9A00FAE4D6 /* Info.plist */,
 				B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */,
+				B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */,
 			);
 			path = ExampleApp;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				B4DEE2C9235F8F190087DFAE /* ActionViewController.swift in Sources */,
 				886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */,
+				B4DEE2CB235F92AA0087DFAE /* ControlPanel.swift in Sources */,
 				886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */,
 				4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */,
 				886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */,

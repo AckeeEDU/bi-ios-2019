@@ -169,28 +169,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="C5X-sg-vsa">
-                                <rect key="frame" x="20" y="62" width="335" height="32"/>
-                                <segments>
-                                    <segment title="Red"/>
-                                    <segment title="Green"/>
-                                    <segment title="Blue"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentedValueChanged:" destination="Cv0-of-SyX" eventType="valueChanged" id="sTB-7U-RHl"/>
-                                </connections>
-                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Dq-X6-b5z" customClass="ControlPanelView" customModule="ExampleApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="335" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="AP4-OR-Nkb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="utD-ab-dGp" firstAttribute="trailing" secondItem="C5X-sg-vsa" secondAttribute="trailing" constant="20" id="1ze-3j-UZB"/>
-                            <constraint firstItem="C5X-sg-vsa" firstAttribute="top" secondItem="utD-ab-dGp" secondAttribute="top" constant="18" id="IrH-y2-S5K"/>
-                            <constraint firstItem="C5X-sg-vsa" firstAttribute="leading" secondItem="utD-ab-dGp" secondAttribute="leading" constant="20" id="LVv-mP-Wv7"/>
+                            <constraint firstItem="0Dq-X6-b5z" firstAttribute="top" secondItem="utD-ab-dGp" secondAttribute="top" constant="20" id="QGp-Cg-86Q"/>
+                            <constraint firstItem="0Dq-X6-b5z" firstAttribute="leading" secondItem="utD-ab-dGp" secondAttribute="leading" constant="20" id="gV9-8h-rhP"/>
+                            <constraint firstItem="utD-ab-dGp" firstAttribute="trailing" secondItem="0Dq-X6-b5z" secondAttribute="trailing" constant="20" id="nvv-nG-heA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="utD-ab-dGp"/>
                     </view>
                     <connections>
-                        <outlet property="segmentedControl" destination="C5X-sg-vsa" id="jTN-PN-97P"/>
+                        <outlet property="controlPanel" destination="0Dq-X6-b5z" id="Gg2-Xb-uH3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1k-bl-QPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
