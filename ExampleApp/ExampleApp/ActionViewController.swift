@@ -26,8 +26,12 @@ class ActionViewController : UIViewController {
     
     @objc func placeGestureHandler(recognizer : UITapGestureRecognizer) {
         let location = recognizer.location(in: self.view)
-        let rect = viewModel.createShape(position: location)
-        view.addSubview(rect)
+        let shape = viewModel.createShape(position: location)
+        shape.action = {
+            self.viewModel.removeShape(shape: shape)
+        }
+
+        view.addSubview(shape)
     
     }
     
@@ -40,6 +44,7 @@ class ActionViewController : UIViewController {
         }
 
     }
+    
     
     
     override func viewDidLoad() {

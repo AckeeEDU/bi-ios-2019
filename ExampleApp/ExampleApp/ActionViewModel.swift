@@ -13,7 +13,7 @@ import UIKit
 struct Shape {
     let tag : Int
     let color : UIColor
-    let  size : Float
+    let size : Float
     let origin : CGPoint
 }
 
@@ -34,17 +34,13 @@ class ActionViewModel {
     var didUpdate : () -> () = {}
 
     
-    func createShape(position: CGPoint) -> UIView {
+    func createShape(position: CGPoint) -> ShapeView {
         let size = selectedSize
         let rect = ShapeView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
         let isRect = selectedShape == 1
         rect.frame.origin = position
         rect.layer.cornerRadius = isRect ? 0 : CGFloat(size / 2)
         rect.backgroundColor = selectedColor
-        rect.action = { [weak rect] in
-            //leaking
-            rect?.removeFromSuperview()
-        }
         let shape = Shape(tag: shapes.count, color: selectedColor, size: selectedSize, origin: position)
         shapes.append(shape)
         didUpdate()
@@ -71,6 +67,11 @@ class ActionViewModel {
         selectedShape = sender.selectedSegmentIndex
         didUpdate()
     }
+    
+    func removeShape(shape: ShapeView) {
+        shape.removeFromSuperview()
+    }
+
 
     
 }
