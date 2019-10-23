@@ -42,7 +42,6 @@ class ControlPanelView : UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false // IMPORTANT!
 
         stack.addArrangedSubview(createHStack(views: createLabel("Color"), colorSegment))
-
         stack.addArrangedSubview(createHStack(views: createLabel("Shape"), shapeSegment))
         stack.addArrangedSubview(createHStack(views: createLabel("Size"), sizePicker))
         addSubview(stack)

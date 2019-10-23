@@ -20,7 +20,6 @@ class ActionViewController : UIViewController {
         super.loadView()
         let placeGesture = UITapGestureRecognizer(target: self, action: #selector(placeGestureHandler(recognizer:)))
         view.addGestureRecognizer(placeGesture)
-        
         controlPanel.colorSegment.addTarget(self, action: #selector(segmentedValueChanged(_:)), for: .valueChanged)
 
     }
@@ -37,7 +36,7 @@ class ActionViewController : UIViewController {
     @objc func placeGestureHandler(recognizer : UITapGestureRecognizer) {
         let location = recognizer.location(in: self.view)
         let size = controlPanel.sizeSlider.value
-        let rect = UIView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
+        let rect = ShapeView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
         let isRect = controlPanel.shapeSegment.selectedSegmentIndex == 1
         rect.frame.origin = location
         rect.layer.cornerRadius = isRect ? 0 : CGFloat(size / 2)
