@@ -16,6 +16,9 @@ class ControlPanelView : UIView {
     weak var shapeSegment : UISegmentedControl!
     weak var sizeSlider : UISlider!
     
+    weak var valuesLabel : UILabel!
+
+    
     
     
     required init?(coder: NSCoder) {
@@ -35,6 +38,10 @@ class ControlPanelView : UIView {
         sizePicker.value = 10
         self.sizeSlider = sizePicker
         
+        let label = createLabel("Values")
+        valuesLabel = label
+
+        
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 10
@@ -44,6 +51,7 @@ class ControlPanelView : UIView {
         stack.addArrangedSubview(createHStack(views: createLabel("Color"), colorSegment))
         stack.addArrangedSubview(createHStack(views: createLabel("Shape"), shapeSegment))
         stack.addArrangedSubview(createHStack(views: createLabel("Size"), sizePicker))
+        stack.addArrangedSubview(createHStack(views: label))
         addSubview(stack)
         
         let margin = self.safeAreaLayoutGuide

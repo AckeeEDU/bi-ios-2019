@@ -35,7 +35,10 @@ class ActionViewController : UIViewController {
         controlPanel.colorSegment.addTarget(viewModel, action: #selector(viewModel.colorForControl(_:)), for: .valueChanged)
         controlPanel.shapeSegment.addTarget(viewModel, action: #selector(viewModel.shapeForControl(_:)), for: .valueChanged)
         controlPanel.sizeSlider.addTarget(viewModel, action: #selector(viewModel.sizeForControl(_:)), for: .valueChanged)
-        
+        viewModel.didUpdate = {
+            self.controlPanel.valuesLabel.text = self.viewModel.overView
+        }
+
     }
     
     

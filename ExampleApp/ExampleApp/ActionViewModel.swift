@@ -9,11 +9,30 @@
 import Foundation
 import UIKit
 
+
+struct Shape {
+    let tag : Int
+    let color : UIColor
+    let  size : Float
+    let origin : CGPoint
+}
+
+
 class ActionViewModel {
     
     var selectedColor : UIColor = .red
     var selectedSize : Float = 10
     var selectedShape : Int = 0
+    
+    var shapes = [Shape]()
+    var overView : String {
+        get {
+            return "Size: \(selectedSize) Count: \(shapes.count)"
+        }
+    }
+    
+    var didUpdate : () -> () = {}
+
     
     func createShape(position: CGPoint) -> UIView {
         let size = selectedSize
@@ -26,6 +45,10 @@ class ActionViewModel {
             //leaking
             rect?.removeFromSuperview()
         }
+        let shape = Shape(tag: shapes.count, color: selectedColor, size: selectedSize, origin: position)
+        shapes.append(shape)
+        didUpdate()
+
         return rect
     }
     
@@ -36,14 +59,17 @@ class ActionViewModel {
         case 2: selectedColor = .blue
         default: selectedColor = .red
         }
+        didUpdate()
     }
     
     @objc func sizeForControl(_ sender: UISlider) {
         selectedSize = sender.value
+        didUpdate()
     }
     
     @objc func shapeForControl(_ sender: UISegmentedControl) {
         selectedShape = sender.selectedSegmentIndex
+        didUpdate()
     }
 
     
