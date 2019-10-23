@@ -29,6 +29,7 @@ class ActionViewController : UIViewController {
         let shape = viewModel.createShape(position: location)
         shape.action = { [weak self, weak shape] in
             self?.viewModel.removeShape(shape: shape!)
+            shape?.removeFromSuperview()
         }
 
         view.addSubview(shape)

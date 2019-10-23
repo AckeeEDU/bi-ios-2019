@@ -76,8 +76,6 @@ class ActionViewModel {
         shapes = shapes.filter({ (el) -> Bool in
             el.tag != shape.tag
         })
-        
-        shape.removeFromSuperview()
         didUpdate()
     }
 
