@@ -23,6 +23,8 @@ class ActionViewModel {
     var selectedColor : UIColor = .red
     var selectedSize : Float = 10
     var selectedShape : Int = 0
+    var indexCounter = 0
+
     
     var shapes = [Shape]()
     var overView : String {
@@ -41,7 +43,9 @@ class ActionViewModel {
         rect.frame.origin = position
         rect.layer.cornerRadius = isRect ? 0 : CGFloat(size / 2)
         rect.backgroundColor = selectedColor
-        let shape = Shape(tag: shapes.count, color: selectedColor, size: selectedSize, origin: position)
+        rect.tag = indexCounter
+        indexCounter += 1
+        let shape = Shape(tag: rect.tag, color: selectedColor, size: selectedSize, origin: position)
         shapes.append(shape)
         didUpdate()
 
@@ -69,7 +73,12 @@ class ActionViewModel {
     }
     
     func removeShape(shape: ShapeView) {
+        shapes = shapes.filter({ (el) -> Bool in
+            el.tag != shape.tag
+        })
+        
         shape.removeFromSuperview()
+        didUpdate()
     }
 
 

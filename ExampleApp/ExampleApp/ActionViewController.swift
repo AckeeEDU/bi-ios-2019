@@ -27,8 +27,8 @@ class ActionViewController : UIViewController {
     @objc func placeGestureHandler(recognizer : UITapGestureRecognizer) {
         let location = recognizer.location(in: self.view)
         let shape = viewModel.createShape(position: location)
-        shape.action = {
-            self.viewModel.removeShape(shape: shape)
+        shape.action = { [weak self, weak shape] in
+            self?.viewModel.removeShape(shape: shape!)
         }
 
         view.addSubview(shape)
