@@ -41,7 +41,10 @@ class ActionViewController : UIViewController {
         rect.frame.origin = location
         rect.layer.cornerRadius = isRect ? 0 : CGFloat(size / 2)
         rect.backgroundColor = selectedColor
-        
+        rect.action = {
+            //leaking
+            rect.removeFromSuperview()
+        }
         view.addSubview(rect)
     
     }
