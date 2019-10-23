@@ -13,6 +13,7 @@ class ActionViewController : UIViewController {
     
     
     var selectedColor : UIColor = .red
+    var viewModel : ActionViewModel = ActionViewModel()
     
     @IBOutlet weak var controlPanel : ControlPanelView!
 
@@ -20,37 +21,26 @@ class ActionViewController : UIViewController {
         super.loadView()
         let placeGesture = UITapGestureRecognizer(target: self, action: #selector(placeGestureHandler(recognizer:)))
         view.addGestureRecognizer(placeGesture)
-        controlPanel.colorSegment.addTarget(self, action: #selector(segmentedValueChanged(_:)), for: .valueChanged)
 
-    }
-    
-    @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
-        switch index {
-            case 1: selectedColor = .green
-            case 2: selectedColor = .blue
-            default: selectedColor = .red
-        }
     }
     
     @objc func placeGestureHandler(recognizer : UITapGestureRecognizer) {
         let location = recognizer.location(in: self.view)
-        let size = controlPanel.sizeSlider.value
-        let rect = ShapeView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
-        let isRect = controlPanel.shapeSegment.selectedSegmentIndex == 1
-        rect.frame.origin = location
-        rect.layer.cornerRadius = isRect ? 0 : CGFloat(size / 2)
-        rect.backgroundColor = selectedColor
-        rect.action = { [weak rect] in
-            //leaking
-            rect?.removeFromSuperview()
-        }
+        let rect = viewModel.createShape(position: location)
         view.addSubview(rect)
     
     }
-
+    
+    func setupBindings() {
+        controlPanel.colorSegment.addTarget(viewModel, action: #selector(viewModel.colorForControl(_:)), for: .valueChanged)
+        controlPanel.shapeSegment.addTarget(viewModel, action: #selector(viewModel.shapeForControl(_:)), for: .valueChanged)
+        controlPanel.sizeSlider.addTarget(viewModel, action: #selector(viewModel.sizeForControl(_:)), for: .valueChanged)
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
     }
 }
