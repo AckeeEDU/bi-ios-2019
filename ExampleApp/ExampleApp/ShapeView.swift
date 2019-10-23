@@ -24,14 +24,16 @@ class ShapeView : UIView  {
         let gestureTap = UITapGestureRecognizer(target: self, action: #selector(ShapeView.tapGesture(gesture:)))
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(ShapeView.doubleTapGesture(gesture:)))
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(scalePiece(_:)))
-
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(panPiece(_:)))
+        
         gestureTap.numberOfTapsRequired = 1
         doubleTap.numberOfTapsRequired = 2
         gestureTap.require(toFail: doubleTap)
-                
+        
         addGestureRecognizer(gestureTap)
         addGestureRecognizer(doubleTap)
         addGestureRecognizer(pinch)
+        addGestureRecognizer(pan)
     }
     
     
@@ -51,6 +53,24 @@ class ShapeView : UIView  {
             gestureRecognizer.view?.transform = (gestureRecognizer.view?.transform.scaledBy(x: gestureRecognizer.scale, y: gestureRecognizer.scale))!
             gestureRecognizer.scale = 1.0
         }
+    }
+    
+    @objc func panPiece(_ gestureRecognizer : UIPanGestureRecognizer) {
+        guard gestureRecognizer.view != nil else {return}
+        let piece = gestureRecognizer.view!
+        // Get the changes in the X and Y directions relative to
+        // the superview's coordinate space.
+        let translation = gestureRecognizer.translation(in: piece.superview)
+        
+        // Update the position for the .began, .changed, and .ended states
+        if gestureRecognizer.state != .cancelled {
+            // Add the X and Y translation to the view's original position.
+            let newCenter = CGPoint(x: piece.center.x + translation.x, y: piece.center.y + translation.y)
+            piece.center = newCenter
+        }
+        
+        gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: piece.superview)
+        
     }
     
     
