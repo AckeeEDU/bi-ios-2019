@@ -25,6 +25,7 @@ class ShapeView : UIView {
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(ShapeView.doubleTapGesture(gesture:)))
         gestureTap.numberOfTapsRequired = 1
         doubleTap.numberOfTapsRequired = 2
+        gestureTap.require(toFail: doubleTap)
         
         addGestureRecognizer(gestureTap)
         addGestureRecognizer(doubleTap)
