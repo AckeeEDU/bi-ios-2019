@@ -42,3 +42,11 @@ branch: 04-autolayout
 - Jednoduché animování autolayoutu
 - [https://www.wtfautolayout.com](https://www.wtfautolayout.com) – vizualizace logu rozbitých constraints
 
+## 5. Actions, Recognizers, Closures and Viewmodel separation
+branch: 05-recognizers
+
+- Handling IBActions and setting UIControl actions with code and IB
+- Handling Tap,Pan,PicnhGestures
+- Manipulationg UIControls and getting values out of it
+- Showing and fixing common memory leaks with closures
+- Delegating responsibility with closures
