@@ -10,13 +10,6 @@ import Foundation
 import UIKit
 
 
-struct Shape {
-    let tag : Int
-    let color : UIColor
-    let size : Float
-    let origin : CGPoint
-}
-
 
 class ActionViewModel {
     

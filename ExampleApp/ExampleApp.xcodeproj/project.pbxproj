@@ -16,6 +16,7 @@
 		886F66F6234DBD9A00FAE4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F5234DBD9A00FAE4D6 /* Assets.xcassets */; };
 		886F66F9234DBD9A00FAE4D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */; };
 		B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */; };
+		B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1CB236990D4007A6FA5 /* Shape.swift */; };
 		B4DEE2C9235F8F190087DFAE /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */; };
 		B4DEE2CB235F92AA0087DFAE /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */; };
 		B4DEE2CF2360602E0087DFAE /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2CE2360602E0087DFAE /* ShapeView.swift */; };
@@ -34,6 +35,7 @@
 		886F66F8234DBD9A00FAE4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		886F66FA234DBD9A00FAE4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+		B42DC1CB236990D4007A6FA5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		B4DEE2CE2360602E0087DFAE /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		886F66EB234DBD9600FAE4D6 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				B42DC1CA236990C7007A6FA5 /* Models */,
 				886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */,
 				886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */,
 				886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */,
@@ -86,6 +89,14 @@
 				B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */,
 			);
 			path = ExampleApp;
+			sourceTree = "<group>";
+		};
+		B42DC1CA236990C7007A6FA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B42DC1CB236990D4007A6FA5 /* Shape.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */,
 				B4DEE2D123606F710087DFAE /* ActionViewModel.swift in Sources */,
 				4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */,
+				B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */,
 				886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */,
 				B4DEE2CF2360602E0087DFAE /* ShapeView.swift in Sources */,
 				B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */,
