@@ -22,6 +22,12 @@ class ActionViewController : UIViewController {
         let placeGesture = UITapGestureRecognizer(target: self, action: #selector(placeGestureHandler(recognizer:)))
         view.addGestureRecognizer(placeGesture)
 
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTap(recognizer:)))
+        doubleTap.numberOfTapsRequired = 2
+        placeGesture.require(toFail: doubleTap)
+        view.addGestureRecognizer(doubleTap)
+        
+        
     }
     
     @objc func placeGestureHandler(recognizer : UITapGestureRecognizer) {
@@ -33,6 +39,13 @@ class ActionViewController : UIViewController {
         }
 
         view.addSubview(shape)
+    
+    }
+    
+    @objc func doubleTap(recognizer : UITapGestureRecognizer) {
+        
+        let consoleVC = ConsoleViewController(viewModel: viewModel)
+        present(consoleVC, animated: true, completion: nil)
     
     }
     
