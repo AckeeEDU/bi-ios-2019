@@ -17,6 +17,7 @@
 		886F66F9234DBD9A00FAE4D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */; };
 		B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */; };
 		B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1CB236990D4007A6FA5 /* Shape.swift */; };
+		B42DC1D223699A5D007A6FA5 /* ShapeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1D123699A5D007A6FA5 /* ShapeService.swift */; };
 		B4DEE2C9235F8F190087DFAE /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */; };
 		B4DEE2CB235F92AA0087DFAE /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */; };
 		B4DEE2CF2360602E0087DFAE /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEE2CE2360602E0087DFAE /* ShapeView.swift */; };
@@ -36,6 +37,7 @@
 		886F66FA234DBD9A00FAE4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		B42DC1CB236990D4007A6FA5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		B42DC1D123699A5D007A6FA5 /* ShapeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeService.swift; sourceTree = "<group>"; };
 		B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		B4DEE2CE2360602E0087DFAE /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		886F66EB234DBD9600FAE4D6 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				B42DC1D023699A4E007A6FA5 /* Service */,
 				B42DC1CF2369923D007A6FA5 /* Views */,
 				B42DC1CE236991D5007A6FA5 /* ViewModels */,
 				B42DC1CD236991AD007A6FA5 /* ViewConttrollers */,
@@ -121,6 +124,14 @@
 				B4DEE2CE2360602E0087DFAE /* ShapeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B42DC1D023699A4E007A6FA5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B42DC1D123699A5D007A6FA5 /* ShapeService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				B4DEE2CF2360602E0087DFAE /* ShapeView.swift in Sources */,
 				B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */,
 				4B43BF0A2357186500ABDBF6 /* AutolayoutViewController.swift in Sources */,
+				B42DC1D223699A5D007A6FA5 /* ShapeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

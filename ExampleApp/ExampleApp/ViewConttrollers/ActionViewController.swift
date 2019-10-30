@@ -13,7 +13,7 @@ class ActionViewController : UIViewController {
     
     
     var selectedColor : UIColor = .red
-    var viewModel : ActionViewModel = ActionViewModelImpl()
+    var viewModel : ActionViewModel = ActionViewModelImpl(shapeService: ArrayShapeService())
     
     @IBOutlet weak var controlPanel : ControlPanelView!
 

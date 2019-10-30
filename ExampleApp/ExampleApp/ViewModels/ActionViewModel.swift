@@ -27,6 +27,9 @@ protocol ActionViewModel {
 
 
 class ActionViewModelImpl : ActionViewModel {
+    
+    
+    var shapeService: ShapeService
         
     var selectedColor : UIColor = .red {
         didSet { didUpdate() }
@@ -42,7 +45,10 @@ class ActionViewModelImpl : ActionViewModel {
     var indexCounter = 0
 
     
-    var shapes = [Shape]()
+    var shapes : [Shape] {
+        return shapeService.shapes
+    }
+    
     var overview : String {
         get {
             return "Size: \(selectedSize) Count: \(shapes.count)"
@@ -50,6 +56,10 @@ class ActionViewModelImpl : ActionViewModel {
     }
     
     var didUpdate : () -> () = {}
+    
+    init(shapeService : ShapeService) {
+        self.shapeService = shapeService
+    }
 
     
     func createShape(position: CGPoint) -> ShapeView {
@@ -62,7 +72,7 @@ class ActionViewModelImpl : ActionViewModel {
         rect.tag = indexCounter
         indexCounter += 1
         let shape = Shape(tag: rect.tag, color: selectedColor, size: selectedSize, origin: position)
-        shapes.append(shape)
+        shapeService.addShape(shape: shape)
         didUpdate()
 
         return rect
@@ -83,9 +93,8 @@ class ActionViewModelImpl : ActionViewModel {
     }
     
     func removeShape(withTag tag: Int) {
-        shapes = shapes.filter({ (el) -> Bool in
-            el.tag != tag
-        })
+        guard let shape = shapeService.findShape(tag: tag) else { return }
+        shapeService.removeShape(shape: shape)
         didUpdate()
     }
 
