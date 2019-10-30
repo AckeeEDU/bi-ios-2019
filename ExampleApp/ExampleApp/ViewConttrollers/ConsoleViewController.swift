@@ -27,7 +27,7 @@ class ConsoleViewController : UIViewController {
     }
     
     override func viewDidLoad() {
-        print(viewModel.overView)
+        print(viewModel.overview)
         viewModel.shapes.forEach { (shape) in
             print("Shape \(shape.tag) Color: \(shape.color) Origin: \(shape.origin.x) \(shape.origin.y) Size: \(shape.size)  ")
         }

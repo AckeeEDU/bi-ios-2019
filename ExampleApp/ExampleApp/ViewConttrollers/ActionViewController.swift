@@ -13,7 +13,7 @@ class ActionViewController : UIViewController {
     
     
     var selectedColor : UIColor = .red
-    var viewModel : ActionViewModel = ActionViewModel()
+    var viewModel : ActionViewModel = ActionViewModelImpl()
     
     @IBOutlet weak var controlPanel : ControlPanelView!
 
@@ -34,7 +34,7 @@ class ActionViewController : UIViewController {
         let location = recognizer.location(in: self.view)
         let shape = viewModel.createShape(position: location)
         shape.action = { [weak self, weak shape] in
-            self?.viewModel.removeShape(shape: shape!)
+            self?.viewModel.removeShape(withTag: shape!.tag)
             shape?.removeFromSuperview()
         }
 
@@ -50,13 +50,31 @@ class ActionViewController : UIViewController {
     }
     
     func setupBindings() {
-        controlPanel.colorSegment.addTarget(viewModel, action: #selector(viewModel.colorForControl(_:)), for: .valueChanged)
-        controlPanel.shapeSegment.addTarget(viewModel, action: #selector(viewModel.shapeForControl(_:)), for: .valueChanged)
-        controlPanel.sizeSlider.addTarget(viewModel, action: #selector(viewModel.sizeForControl(_:)), for: .valueChanged)
+        controlPanel.colorSegment.addTarget(self, action: #selector(handleColor), for: .valueChanged)
+        controlPanel.shapeSegment.addTarget(self, action: #selector(handleShape), for: .valueChanged)
+        controlPanel.sizeSlider.addTarget(self, action: #selector(handleShape), for: .valueChanged)
         viewModel.didUpdate = {
-            self.controlPanel.valuesLabel.text = self.viewModel.overView
+            self.controlPanel.valuesLabel.text = self.viewModel.overview
         }
 
+    }
+    
+    
+    @objc func handleColor(_ control: UISegmentedControl) {
+        let index = control.selectedSegmentIndex
+        switch index {
+        case 1: viewModel.selectedColor = .green
+        case 2: viewModel.selectedColor = .blue
+        default: viewModel.selectedColor = .red
+        }
+    }
+    
+    @objc func handleSize(_ control: UISlider) {
+        viewModel.selectedSize = control.value
+    }
+    
+    @objc func handleShape(_ control: UISegmentedControl) {
+        viewModel.selectedShape = control.selectedSegmentIndex
     }
     
     

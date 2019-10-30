@@ -9,18 +9,41 @@
 import Foundation
 import UIKit
 
-
-
-class ActionViewModel {
+protocol ActionViewModel {
     
-    var selectedColor : UIColor = .red
-    var selectedSize : Float = 10
-    var selectedShape : Int = 0
+    var selectedColor : UIColor {get set}
+    var selectedSize : Float {get set}
+    var selectedShape : Int {get set}
+    var indexCounter : Int {get}
+    
+    var shapes : [Shape] {get}
+    var overview : String {get}
+    var didUpdate : () -> () {get set}
+    
+    func createShape(position : CGPoint) -> ShapeView
+    func removeShape(withTag tag: Int)
+    
+}
+
+
+class ActionViewModelImpl : ActionViewModel {
+        
+    var selectedColor : UIColor = .red {
+        didSet { didUpdate() }
+    }
+    var selectedSize : Float = 10 {
+        didSet {
+            didUpdate()
+        }
+    }
+    var selectedShape : Int = 0 {
+        didSet { didUpdate() }
+    }
     var indexCounter = 0
 
     
     var shapes = [Shape]()
-    var overView : String {
+    var overview : String {
         get {
             return "Size: \(selectedSize) Count: \(shapes.count)"
         }
@@ -46,12 +69,6 @@ class ActionViewModel {
     }
     
     @IBAction func colorForControl(_ sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
-        switch index {
-        case 1: selectedColor = .green
-        case 2: selectedColor = .blue
-        default: selectedColor = .red
-        }
         didUpdate()
     }
     
@@ -65,9 +82,9 @@ class ActionViewModel {
         didUpdate()
     }
     
-    func removeShape(shape: ShapeView) {
+    func removeShape(withTag tag: Int) {
         shapes = shapes.filter({ (el) -> Bool in
-            el.tag != shape.tag
+            el.tag != tag
         })
         didUpdate()
     }
