@@ -15,8 +15,7 @@ class ShapeView : UIView  {
         print("action")
     }
     
-    //wait for it
-    let hugeArray = Array(0...1000000)
+    
     
     
     override init(frame: CGRect) {

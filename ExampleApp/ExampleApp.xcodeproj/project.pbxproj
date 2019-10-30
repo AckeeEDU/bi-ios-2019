@@ -72,21 +72,16 @@
 		886F66EB234DBD9600FAE4D6 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				B42DC1CF2369923D007A6FA5 /* Views */,
+				B42DC1CE236991D5007A6FA5 /* ViewModels */,
+				B42DC1CD236991AD007A6FA5 /* ViewConttrollers */,
 				B42DC1CA236990C7007A6FA5 /* Models */,
 				886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */,
 				886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */,
-				886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */,
-				4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */,
-				4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */,
 				886F66F2234DBD9600FAE4D6 /* Main.storyboard */,
 				886F66F5234DBD9A00FAE4D6 /* Assets.xcassets */,
 				886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */,
 				886F66FA234DBD9A00FAE4D6 /* Info.plist */,
-				B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */,
-				B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */,
-				B4DEE2CE2360602E0087DFAE /* ShapeView.swift */,
-				B4DEE2D023606F710087DFAE /* ActionViewModel.swift */,
-				B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */,
 			);
 			path = ExampleApp;
 			sourceTree = "<group>";
@@ -97,6 +92,35 @@
 				B42DC1CB236990D4007A6FA5 /* Shape.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B42DC1CD236991AD007A6FA5 /* ViewConttrollers */ = {
+			isa = PBXGroup;
+			children = (
+				886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */,
+				4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */,
+				4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */,
+				B4DEE2C8235F8F190087DFAE /* ActionViewController.swift */,
+				B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */,
+			);
+			path = ViewConttrollers;
+			sourceTree = "<group>";
+		};
+		B42DC1CE236991D5007A6FA5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B4DEE2D023606F710087DFAE /* ActionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B42DC1CF2369923D007A6FA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */,
+				B4DEE2CE2360602E0087DFAE /* ShapeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

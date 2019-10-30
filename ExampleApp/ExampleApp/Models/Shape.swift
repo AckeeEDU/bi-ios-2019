@@ -15,3 +15,6 @@ struct Shape {
     let size : Float
     let origin : CGPoint
 }
+
+
+
