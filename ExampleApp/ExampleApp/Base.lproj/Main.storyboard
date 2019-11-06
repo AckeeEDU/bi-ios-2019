@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6on-1Q-78x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -10,7 +10,7 @@
         <!--Autolayout View Controller-->
         <scene sceneID="qv3-DN-ALv">
             <objects>
-                <viewController id="Zjm-yE-Rh0" customClass="AutolayoutViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AutolayoutViewController" id="Zjm-yE-Rh0" customClass="AutolayoutViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neU-CT-9Ij">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,12 +176,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="109"/>
+            <point key="canvasLocation" x="-196" y="919"/>
         </scene>
         <!--Action View Controller-->
         <scene sceneID="YhA-1E-oCS">
             <objects>
-                <viewController id="Cv0-of-SyX" customClass="ActionViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActionViewController" id="Cv0-of-SyX" customClass="ActionViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4mP-po-0Zd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,12 +208,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1k-bl-QPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="99"/>
+            <point key="canvasLocation" x="618" y="109"/>
         </scene>
         <!--Autolayouted BubblesVC-->
         <scene sceneID="kfw-Na-SW4">
             <objects>
-                <viewController id="6on-1Q-78x" customClass="AutolayoutedBubblesVC" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AutolayoutedBubblesVC" id="6on-1Q-78x" customClass="AutolayoutedBubblesVC" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0x-xT-09f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

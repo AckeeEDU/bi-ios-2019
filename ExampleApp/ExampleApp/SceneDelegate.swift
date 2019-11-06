@@ -18,16 +18,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
+
+        let tabBarVC = UITabBarController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let vc1 = storyboard.instantiateViewController(identifier: "AutolayoutViewController")
+        vc1.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
         
-        // Zde můžeme inicializovat vlastní window, s vlastním rootVC a úplně se vyhnout storyboardu
-        // Zakomentováno, jen pro ukázku - pokračujeme v použití storyboardu
-//        let vc = UIViewController()
-//        vc.view.backgroundColor = .green
-//
-//        let window = UIWindow(windowScene: scene)
-//        window.rootViewController = vc
-//        self.window = window
-//        window.makeKeyAndVisible()
+        let vc2 = storyboard.instantiateViewController(identifier: "AutolayoutedBubblesVC")
+        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+
+        let vc3 = storyboard.instantiateViewController(identifier: "ActionViewController")
+        vc3.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+
+        tabBarVC.viewControllers = [vc1, vc2, vc3]
+
+        let window = UIWindow(windowScene: scene)
+        window.rootViewController = tabBarVC
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
