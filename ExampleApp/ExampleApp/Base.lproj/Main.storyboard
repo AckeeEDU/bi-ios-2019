@@ -135,7 +135,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BubblesViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZX-QE-jmB">
@@ -149,8 +149,24 @@
                                     <action selector="fireButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5I-GG-llb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exv-76-hni">
+                                <rect key="frame" x="141" y="343" width="93" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="❌ CLOSE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qbr-ir-hao"/>
+                                    <action selector="fireButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2YY-uq-kol"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="exv-76-hni" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Iqi-7a-WhM"/>
+                            <constraint firstItem="exv-76-hni" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="VVz-Tq-rl1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hUj-nI-pz5"/>
@@ -213,20 +229,25 @@
                                     <action selector="fireButtonTapped:" destination="6on-1Q-78x" eventType="touchUpInside" id="VV2-Pa-HkY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1Y-K1-vp1">
-                                <rect key="frame" x="163" y="396" width="49" height="30"/>
-                                <state key="normal" title="SEGUE"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-hr-owM">
+                                <rect key="frame" x="140.66666666666666" y="392" width="94" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="⏫ SEGUE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="onD-OZ-eO6"/>
+                                    <action selector="fireButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ELa-bh-pIr"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="kmE-V9-s9U"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="V1Y-K1-vp1" firstAttribute="centerY" secondItem="TPt-K8-rBD" secondAttribute="centerY" id="29J-1L-7a5"/>
                             <constraint firstItem="wCr-uL-F1r" firstAttribute="top" secondItem="TPt-K8-rBD" secondAttribute="top" id="HY6-MG-wD6"/>
+                            <constraint firstItem="7S7-hr-owM" firstAttribute="centerX" secondItem="TPt-K8-rBD" secondAttribute="centerX" id="Lyr-NT-7S8"/>
+                            <constraint firstItem="7S7-hr-owM" firstAttribute="centerY" secondItem="TPt-K8-rBD" secondAttribute="centerY" id="Of1-LH-giO"/>
                             <constraint firstItem="wCr-uL-F1r" firstAttribute="centerX" secondItem="a0x-xT-09f" secondAttribute="centerX" id="dql-LW-AxH"/>
-                            <constraint firstItem="V1Y-K1-vp1" firstAttribute="centerX" secondItem="TPt-K8-rBD" secondAttribute="centerX" id="nco-BR-sQt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TPt-K8-rBD"/>
                     </view>

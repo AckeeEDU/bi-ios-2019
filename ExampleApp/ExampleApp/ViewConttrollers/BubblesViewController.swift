@@ -30,6 +30,10 @@ class BubblesViewController: UIViewController {
     
     var bubbleViews: [UIView] = []
 
+    @IBAction func didPressCloseButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func fireButtonTapped(_ sender: UIButton) {
         print("Fire! \(random(min: 0, max: 1))")
         
