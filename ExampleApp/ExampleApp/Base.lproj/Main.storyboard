@@ -161,11 +161,23 @@
                                     <action selector="fireButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2YY-uq-kol"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4az-8q-xtE">
+                                <rect key="frame" x="0.0" y="574" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="MRD-gY-3TH"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="SoQ-8c-C8t" kind="embed" id="5zz-7e-xf4"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="4az-8q-xtE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gd3-Yr-cC5"/>
                             <constraint firstItem="exv-76-hni" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Iqi-7a-WhM"/>
                             <constraint firstItem="exv-76-hni" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="VVz-Tq-rl1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4az-8q-xtE" secondAttribute="bottom" id="tXj-yv-eYv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4az-8q-xtE" secondAttribute="trailing" id="vZg-qb-2mv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -258,6 +270,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv5-UR-xv7" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-196" y="109"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Trq-FR-mbs">
+            <objects>
+                <viewController id="SoQ-8c-C8t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5bR-RX-qcH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkY-nU-RP6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-194" y="1419"/>
         </scene>
     </scenes>
 </document>
