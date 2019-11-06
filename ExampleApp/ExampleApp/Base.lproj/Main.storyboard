@@ -190,7 +190,23 @@
             </objects>
             <point key="canvasLocation" x="-196" y="919"/>
         </scene>
-        <!--Action View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="p02-LV-zb1">
+            <objects>
+                <navigationController storyboardIdentifier="ActionNavigationController" id="A6n-kd-Z3i" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2I1-wa-yU1">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Cv0-of-SyX" kind="relationship" relationship="rootViewController" id="wK1-Zf-cCc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIG-tW-Plo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="109"/>
+        </scene>
+        <!--Bubbles-->
         <scene sceneID="YhA-1E-oCS">
             <objects>
                 <viewController storyboardIdentifier="ActionViewController" id="Cv0-of-SyX" customClass="ActionViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -199,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Dq-X6-b5z" customClass="ControlPanelView" customModule="ExampleApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="335" height="150"/>
+                                <rect key="frame" x="20" y="160" width="335" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="AP4-OR-Nkb"/>
@@ -214,13 +230,36 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="utD-ab-dGp"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Bubbles" id="edA-C1-MXS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Ia6-X6-qFo">
+                            <connections>
+                                <segue destination="xmI-Kc-dDU" kind="show" id="s4o-kj-8t7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="controlPanel" destination="0Dq-X6-b5z" id="Gg2-Xb-uH3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1k-bl-QPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="109"/>
+            <point key="canvasLocation" x="1594" y="109"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bL9-oG-VxZ">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="xmI-Kc-dDU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L1R-Ug-QmQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ZPL-JM-27z"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eM8-Ky-ckH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOV-nS-Y5l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514" y="109"/>
         </scene>
         <!--Autolayouted BubblesVC-->
         <scene sceneID="kfw-Na-SW4">

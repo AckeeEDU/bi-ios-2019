@@ -28,13 +28,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc2 = storyboard.instantiateViewController(identifier: "AutolayoutedBubblesVC")
         vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
 
-        let vc3 = storyboard.instantiateViewController(identifier: "ActionViewController")
+        let vc3 = storyboard.instantiateViewController(identifier: "ActionNavigationController")
         vc3.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
 
         tabBarVC.viewControllers = [vc1, vc2, vc3]
 
+        let navVC = UINavigationController(rootViewController: tabBarVC)
+        navVC.isNavigationBarHidden = true
+
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = tabBarVC
+        window.rootViewController = navVC
         self.window = window
         window.makeKeyAndVisible()
     }
