@@ -48,6 +48,15 @@ final class TableViewController: UIViewController { // UITableViewController
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTapped))
+    }
+    
+    // MARK: - UI actions
+    
+    @objc
+    private func editTapped() {
+        tableView.setEditing(!tableView.isEditing, animated: true)
     }
 }
 
