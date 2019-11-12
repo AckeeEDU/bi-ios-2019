@@ -11,15 +11,7 @@ import UIKit
 final class TableViewController: UIViewController { // UITableViewController
     private weak var tableView: UITableView!
     
-    private var data = [
-        User(name: "Igor", description: "Eastern reinforcement 🇸🇰"),
-        User(name: "Jakub", description: "🏎 enthusiast"),
-        User(name: "j.m.", description: "Smart 🏚 guru"),
-        User(name: "Karel", description: "Gaming expert 🎮"),
-        User(name: "Lukáš 👱‍♂️", description: "Cables admirer (even in 2019 🤷‍♂️)"),
-        User(name: "Marek", description: "Just geek 😂"),
-        User(name: "Slávek", description: "Code signing ninja 🤺"),
-    ]
+    private var data = User.exampleData
     
     // MARK: - View life cycle
     
@@ -192,11 +184,6 @@ extension TableViewController {
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-    }
-    
-    struct User {
-        let name: String
-        let description: String
     }
     
     enum Section: Int, CaseIterable {

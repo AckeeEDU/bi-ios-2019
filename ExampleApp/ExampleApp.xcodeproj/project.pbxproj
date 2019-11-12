@@ -12,6 +12,7 @@
 		69CDF7E8237AC8B7000CDC21 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7E7237AC8B7000CDC21 /* ScrollViewController.swift */; };
 		69CDF7EA237AD658000CDC21 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7E9237AD658000CDC21 /* TableViewController.swift */; };
 		69CDF7EC237AECFC000CDC21 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7EB237AECFC000CDC21 /* CollectionViewController.swift */; };
+		69CDF7EE237AF0C2000CDC21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7ED237AF0C2000CDC21 /* User.swift */; };
 		886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */; };
 		886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */; };
 		886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */; };
@@ -33,6 +34,7 @@
 		69CDF7E7237AC8B7000CDC21 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		69CDF7E9237AD658000CDC21 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		69CDF7EB237AECFC000CDC21 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		69CDF7ED237AF0C2000CDC21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		886F66E9234DBD9600FAE4D6 /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				B42DC1CB236990D4007A6FA5 /* Shape.swift */,
+				69CDF7ED237AF0C2000CDC21 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				69CDF7EA237AD658000CDC21 /* TableViewController.swift in Sources */,
 				886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */,
 				B4DEE2CB235F92AA0087DFAE /* ControlPanel.swift in Sources */,
+				69CDF7EE237AF0C2000CDC21 /* User.swift in Sources */,
 				886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */,
 				B4DEE2D123606F710087DFAE /* ActionViewModel.swift in Sources */,
 				4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */,
