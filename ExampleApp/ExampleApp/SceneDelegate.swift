@@ -33,8 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let scrollVC = ScrollViewController()
         scrollVC.tabBarItem = UITabBarItem(title: "ScrollView", image: UIImage(systemName: "arrow.up.and.down"), selectedImage: nil)
+        
+        let tableVC = TableViewController()
+        tableVC.tabBarItem = UITabBarItem(title: "TableView", image: UIImage(systemName: "list.dash"), selectedImage: nil)
 
-        tabBarVC.viewControllers = [vc1, vc2, vc3, scrollVC]
+        tabBarVC.viewControllers = [vc1, vc2, vc3, scrollVC, tableVC]
 
         let navVC = UINavigationController(rootViewController: tabBarVC)
         navVC.isNavigationBarHidden = true

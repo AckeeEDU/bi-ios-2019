@@ -10,6 +10,7 @@
 		4B43BF0A2357186500ABDBF6 /* AutolayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */; };
 		4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */; };
 		69CDF7E8237AC8B7000CDC21 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7E7237AC8B7000CDC21 /* ScrollViewController.swift */; };
+		69CDF7EA237AD658000CDC21 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7E9237AD658000CDC21 /* TableViewController.swift */; };
 		886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */; };
 		886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */; };
 		886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */; };
@@ -29,6 +30,7 @@
 		4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutViewController.swift; sourceTree = "<group>"; };
 		4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutedBubblesVC.swift; sourceTree = "<group>"; };
 		69CDF7E7237AC8B7000CDC21 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		69CDF7E9237AD658000CDC21 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		886F66E9234DBD9600FAE4D6 /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				69CDF7E7237AC8B7000CDC21 /* ScrollViewController.swift */,
+				69CDF7E9237AD658000CDC21 /* TableViewController.swift */,
 			);
 			path = "08 ScrollViews";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4DEE2C9235F8F190087DFAE /* ActionViewController.swift in Sources */,
+				69CDF7EA237AD658000CDC21 /* TableViewController.swift in Sources */,
 				886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */,
 				B4DEE2CB235F92AA0087DFAE /* ControlPanel.swift in Sources */,
 				886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */,
