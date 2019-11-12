@@ -27,6 +27,7 @@ final class CollectionViewController: UIViewController { // UICollectionViewCont
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
+        collectionView.refreshControl = UIRefreshControl()
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -43,6 +44,17 @@ final class CollectionViewController: UIViewController { // UICollectionViewCont
         collectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        collectionView.refreshControl?.addTarget(self, action: #selector(refreshTriggered(_:)), for: .valueChanged)
+    }
+    
+    // MARK: - UI actions
+    
+    @objc
+    private func refreshTriggered(_ sender: UIRefreshControl) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            sender.endRefreshing()
+        }
     }
 }
 

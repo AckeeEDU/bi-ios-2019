@@ -21,6 +21,7 @@ final class TableViewController: UIViewController { // UITableViewController
         view.backgroundColor = .white
         
         let tableView = UITableView()
+        tableView.refreshControl = UIRefreshControl()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -41,14 +42,27 @@ final class TableViewController: UIViewController { // UITableViewController
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshTriggered(_:)), for: .valueChanged)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTapped))
     }
+    
+    // MARK: - UI actions
+    
+    
     
     // MARK: - UI actions
     
     @objc
     private func editTapped() {
         tableView.setEditing(!tableView.isEditing, animated: true)
+    }
+    
+    @objc
+    private func refreshTriggered(_ sender: UIRefreshControl) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            sender.endRefreshing()
+        }
     }
 }
 
@@ -96,7 +110,7 @@ extension TableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         data.remove(at: indexPath.row)
-
+        
         let indexPaths = Section.allCases.map { IndexPath(row: indexPath.row, section: $0.rawValue) }
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }

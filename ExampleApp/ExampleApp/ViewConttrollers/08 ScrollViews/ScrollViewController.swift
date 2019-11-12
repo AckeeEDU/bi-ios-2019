@@ -21,6 +21,7 @@ final class ScrollViewController: UIViewController {
         
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.refreshControl = UIRefreshControl()
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -50,11 +51,22 @@ final class ScrollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.refreshControl?.addTarget(self, action: #selector(refreshTriggered(_:)), for: .valueChanged)
+        
         (1...50).forEach { i in
             let label = UILabel()
             label.numberOfLines = 0
             label.text = "[\(i)] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere tempus dui, non laoreet metus egestas luctus. Ut rutrum sollicitudin mauris, vitae luctus nulla posuere nec. Mauris ante lacus, sodales in dolor et, molestie hendrerit nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices mi nisi, luctus ultrices libero tristique in. Sed posuere eros eu iaculis porttitor. Nulla lacus lacus, rhoncus eget luctus lacinia, consequat vitae quam. Duis blandit id sem tempus egestas. Sed tincidunt dui hendrerit quam auctor facilisis. Curabitur ullamcorper velit vitae maximus dignissim. Aenean lectus justo, tempus non consequat eget, sodales eget odio."
             contentView.addArrangedSubview(label)
+        }
+    }
+    
+    // MARK: - UI actions
+    
+    @objc
+    private func refreshTriggered(_ sender: UIRefreshControl) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            sender.endRefreshing()
         }
     }
 }
