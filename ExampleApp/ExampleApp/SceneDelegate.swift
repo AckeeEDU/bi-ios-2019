@@ -30,8 +30,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let vc3 = storyboard.instantiateViewController(identifier: "ActionNavigationController")
         vc3.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+        
+        let scrollVC = ScrollViewController()
+        scrollVC.tabBarItem = UITabBarItem(title: "ScrollView", image: UIImage(systemName: "arrow.up.and.down"), selectedImage: nil)
 
-        tabBarVC.viewControllers = [vc1, vc2, vc3]
+        tabBarVC.viewControllers = [vc1, vc2, vc3, scrollVC]
 
         let navVC = UINavigationController(rootViewController: tabBarVC)
         navVC.isNavigationBarHidden = true
