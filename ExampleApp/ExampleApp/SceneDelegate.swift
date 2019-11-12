@@ -39,8 +39,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let collectionVC = CollectionViewController()
         collectionVC.tabBarItem = UITabBarItem(title: "CollectionView", image: UIImage(systemName: "table"), selectedImage: nil)
+        
+        let diffableTableVC = DiffableTableViewController()
+        diffableTableVC.tabBarItem = UITabBarItem(title: "Diffable TableView", image: UIImage(systemName: "list.dash"), selectedImage: nil)
 
-        tabBarVC.viewControllers = [vc1, vc2, vc3, scrollVC, tableVC, collectionVC]
+        tabBarVC.viewControllers = [vc1, vc2, vc3, scrollVC, tableVC, collectionVC, diffableTableVC]
 
         let navVC = UINavigationController(rootViewController: tabBarVC)
         navVC.isNavigationBarHidden = true

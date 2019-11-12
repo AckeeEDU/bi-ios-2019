@@ -13,6 +13,10 @@
 		69CDF7EA237AD658000CDC21 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7E9237AD658000CDC21 /* TableViewController.swift */; };
 		69CDF7EC237AECFC000CDC21 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7EB237AECFC000CDC21 /* CollectionViewController.swift */; };
 		69CDF7EE237AF0C2000CDC21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7ED237AF0C2000CDC21 /* User.swift */; };
+		69CDF7F0237B0FBC000CDC21 /* DiffableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7EF237B0FBB000CDC21 /* DiffableTableViewController.swift */; };
+		69CDF7F2237B11D0000CDC21 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7F1237B11D0000CDC21 /* CustomCell.swift */; };
+		69CDF7F4237B11EF000CDC21 /* NativeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7F3237B11EF000CDC21 /* NativeCell.swift */; };
+		69CDF7F6237B1219000CDC21 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDF7F5237B1219000CDC21 /* TableSection.swift */; };
 		886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */; };
 		886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */; };
 		886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */; };
@@ -35,6 +39,10 @@
 		69CDF7E9237AD658000CDC21 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		69CDF7EB237AECFC000CDC21 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		69CDF7ED237AF0C2000CDC21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		69CDF7EF237B0FBB000CDC21 /* DiffableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTableViewController.swift; sourceTree = "<group>"; };
+		69CDF7F1237B11D0000CDC21 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		69CDF7F3237B11EF000CDC21 /* NativeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCell.swift; sourceTree = "<group>"; };
+		69CDF7F5237B1219000CDC21 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		886F66E9234DBD9600FAE4D6 /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886F66EC234DBD9600FAE4D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		886F66EE234DBD9600FAE4D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +74,10 @@
 		69CDF7E6237AC8A1000CDC21 /* 08 ScrollViews */ = {
 			isa = PBXGroup;
 			children = (
+				69CDF7EB237AECFC000CDC21 /* CollectionViewController.swift */,
+				69CDF7EF237B0FBB000CDC21 /* DiffableTableViewController.swift */,
 				69CDF7E7237AC8B7000CDC21 /* ScrollViewController.swift */,
 				69CDF7E9237AD658000CDC21 /* TableViewController.swift */,
-				69CDF7EB237AECFC000CDC21 /* CollectionViewController.swift */,
 			);
 			path = "08 ScrollViews";
 			sourceTree = "<group>";
@@ -111,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B42DC1CB236990D4007A6FA5 /* Shape.swift */,
+				69CDF7F5237B1219000CDC21 /* TableSection.swift */,
 				69CDF7ED237AF0C2000CDC21 /* User.swift */,
 			);
 			path = Models;
@@ -141,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				B4DEE2CA235F92AA0087DFAE /* ControlPanel.swift */,
+				69CDF7F1237B11D0000CDC21 /* CustomCell.swift */,
+				69CDF7F3237B11EF000CDC21 /* NativeCell.swift */,
 				B4DEE2CE2360602E0087DFAE /* ShapeView.swift */,
 			);
 			path = Views;
@@ -228,6 +240,10 @@
 				B4DEE2C9235F8F190087DFAE /* ActionViewController.swift in Sources */,
 				69CDF7EA237AD658000CDC21 /* TableViewController.swift in Sources */,
 				886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */,
+				69CDF7F4237B11EF000CDC21 /* NativeCell.swift in Sources */,
+				69CDF7F0237B0FBC000CDC21 /* DiffableTableViewController.swift in Sources */,
+				69CDF7F2237B11D0000CDC21 /* CustomCell.swift in Sources */,
+				69CDF7F6237B1219000CDC21 /* TableSection.swift in Sources */,
 				B4DEE2CB235F92AA0087DFAE /* ControlPanel.swift in Sources */,
 				69CDF7EE237AF0C2000CDC21 /* User.swift in Sources */,
 				886F66ED234DBD9600FAE4D6 /* AppDelegate.swift in Sources */,

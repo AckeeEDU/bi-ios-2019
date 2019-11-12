@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct User {
+struct User: Hashable {
     static let exampleData = [
         User(name: "Igor", description: "Eastern reinforcement 🇸🇰", color: .red),
         User(name: "Jakub", description: "🏎 enthusiast", color: .blue),
