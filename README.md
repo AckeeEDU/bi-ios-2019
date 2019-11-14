@@ -50,3 +50,35 @@ branch: 05-recognizers
 - Manipulationg UIControls and getting values out of it
 - Showing and fixing common memory leaks with closures
 - Delegating responsibility with closures
+
+## 6. Architecture
+branch: 06-architecture
+
+👷‍♂️ TODO
+
+## 7. View controllers
+branch: 07-controllers
+
+👷‍♂️ TODO
+
+## 8. ScrollViews
+
+- `UIScrollView`
+    - základní scrollovací komponenta
+    -  jednoduché na použití vhodné pro menší datové sety
+- `UITableView`
+    - jednosloupcový seznam položek
+    - vhodné i pro velké data sety
+    - umí reusovat jednotlivé buňky
+    - built-in swipe to delete a reorder řádků
+    - využívá data source a delegate pattern pro získání dat a informování o akcích uživatele
+- `UICollectionView`
+    - layout buněk závisí na layout objectu, který je předán v initu
+    - základní `UICollectionViewFlowLayout` - n sloupcový seznam
+    - využívá stejný data source a delegate pattern jako `UITableView` + navíc jeho layout může mít vlastní delegate protocol (např. `UICollectionViewFlowLayout` má `UICollectionViewDelegateFlowLayout`)
+- `DiffableDataSource`
+    - od iOS 13 nový přístup k plnění `UITableView` a `UICollectionView` daty
+    - pracuje na bázi snapshotů - chci naplnit view daty ➡️ vytvořím snapshot ➡️ data source snapshot aplikuje
+    - je nutné, aby modelové objekty implementovaly `Hashable` ➡️ data source využívá hashovanou hodnotu pro výpočet změn, které je třeba aplikovat při změně snapshotu
+
+
