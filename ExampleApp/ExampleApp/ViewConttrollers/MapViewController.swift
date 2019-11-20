@@ -65,11 +65,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MKMarkerAnnotationView") as! MKMarkerAnnotationView
             view.annotation = hare
             view.glyphImage = hare.image
+            view.canShowCallout = true
+            
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(systemName: "chevron.right"), for: [])
+            button.tintColor = .red
+            button.sizeToFit()
+            view.rightCalloutAccessoryView = button
+            
             return view
         case let turtle as Turtle:
             let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MKAnnotationView")!
             view.annotation = turtle
             view.image = turtle.image
+            view.canShowCallout = true
+            
+            view.detailCalloutAccessoryView = UIImageView(image: UIImage(systemName: "flame.fill"))
+            
+            view.isDraggable = true // that's nonsense here of course 😏 - just for example
+            
             return view
         default:
             return nil

@@ -21,7 +21,7 @@ class Hare: NSObject, MKAnnotation {
 }
 
 class Turtle: NSObject, MKAnnotation {
-    let coordinate: CLLocationCoordinate2D
+    var coordinate: CLLocationCoordinate2D // must be `var` to enable dragging in the map
     var title: String? = "Turtle"
     var subtitle: String? = "Going slow..."
     
