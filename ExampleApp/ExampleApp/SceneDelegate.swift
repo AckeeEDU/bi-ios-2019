@@ -22,6 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarVC = UITabBarController()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
+        let mapViewController = MapViewController()
+        mapViewController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map"), selectedImage: nil)
+        
         let vc1 = storyboard.instantiateViewController(identifier: "AutolayoutViewController")
         vc1.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
         
@@ -42,8 +45,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let diffableTableVC = DiffableTableViewController()
         diffableTableVC.tabBarItem = UITabBarItem(title: "Diffable TableView", image: UIImage(systemName: "list.dash"), selectedImage: nil)
-
-        tabBarVC.viewControllers = [vc1, vc2, vc3, scrollVC, tableVC, collectionVC, diffableTableVC]
+        
+        tabBarVC.viewControllers = [mapViewController, vc1, vc2, vc3, scrollVC, tableVC, collectionVC, diffableTableVC]
 
         let navVC = UINavigationController(rootViewController: tabBarVC)
         navVC.isNavigationBarHidden = true
