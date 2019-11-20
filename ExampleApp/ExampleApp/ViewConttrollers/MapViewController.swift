@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
@@ -36,6 +36,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
+        mapView.delegate = self
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "MKMarkerAnnotationView")
+        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "MKAnnotationView")
+        
         mapView.removeAnnotations(mapView.annotations) // not necessary here, but useful when locations come from API
         
         locations.forEach { location in
@@ -52,6 +56,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         // it's not good idea to re-zoom map on each appear, but good enough for our case now
         mapView.showAnnotations(mapView.annotations, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation { // keep default behavior for user location pin
+            return nil
+        }
+        
+        if Bool.random() {
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MKMarkerAnnotationView") as! MKMarkerAnnotationView
+            view.annotation = annotation
+            view.glyphImage = UIImage(systemName: "car.fill")
+            return view
+        } else {
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MKAnnotationView")!
+            view.annotation = annotation
+            view.image = UIImage(systemName: "car.fill")
+            return view
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
