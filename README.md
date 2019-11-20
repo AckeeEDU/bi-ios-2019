@@ -63,7 +63,33 @@ branch: 06-architecture
 ## 7. View controllers
 branch: 07-controllers
 
-👷‍♂️ TODO
+- `UIViewController`
+    - introduction, WTF View Controller
+    - lifecycle methods
+    - memory warnings
+    - containment
+        - child view controllers
+        - UIContainerView
+    - presentation
+        - segues
+        - present modal view controller
+- `TabBarController`
+    - usage
+    - storyboard setup
+    - programmatic setup
+    - configuration
+    - UITabBarItem
+    - delegate methods
+- `UINavigationController`
+    - usage
+    - storyboard setup
+    - programmatic setup
+    - configuration
+    - UINavigationItem
+    - delegate methods
+    - viewControllers stack
+    - set/push/pop methods
+- `UIPageViewController, UIAlertController`
 
 ## 8. ScrollViews
 branch: 08-scrollviews
