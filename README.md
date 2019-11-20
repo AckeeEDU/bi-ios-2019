@@ -54,7 +54,11 @@ branch: 05-recognizers
 ## 6. Architecture
 branch: 06-architecture
 
-👷‍♂️ TODO
+- Showing differences between mvvm and mvc
+- Code testability and data mocking
+- Dependency injection, view model separation 
+- different views for viewmodel
+- different viewmodels for view
 
 ## 7. View controllers
 branch: 07-controllers

@@ -52,7 +52,7 @@ class ActionViewController : UIViewController {
     func setupBindings() {
         controlPanel.colorSegment.addTarget(self, action: #selector(handleColor), for: .valueChanged)
         controlPanel.shapeSegment.addTarget(self, action: #selector(handleShape), for: .valueChanged)
-        controlPanel.sizeSlider.addTarget(self, action: #selector(handleShape), for: .valueChanged)
+        controlPanel.sizeSlider.addTarget(self, action: #selector(handleSize), for: .valueChanged)
         viewModel.didUpdate = {
             self.controlPanel.valuesLabel.text = self.viewModel.overview
         }
