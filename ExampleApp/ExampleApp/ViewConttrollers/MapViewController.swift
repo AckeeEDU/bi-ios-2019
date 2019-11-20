@@ -12,6 +12,7 @@ import MapKit
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     weak var mapView: MKMapView!
+    weak var addressLabel: UILabel!
     var locationManager: CLLocationManager!
     
     override func loadView() {
@@ -27,6 +28,31 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         self.mapView = mapView
+        
+        let addressLabel = UILabel()
+        addressLabel.text = "Address"
+        addressLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(addressLabel)
+        NSLayoutConstraint.activate([
+            addressLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            addressLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        self.addressLabel = addressLabel
+        
+        let addressBackgroundView = UIView()
+        addressBackgroundView.backgroundColor = .white
+        addressBackgroundView.layer.cornerRadius = 5
+        addressBackgroundView.layer.shadowColor = UIColor.black.cgColor
+        addressBackgroundView.layer.shadowOpacity = 0.4
+        addressBackgroundView.layer.shadowOffset = .zero
+        addressBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(addressBackgroundView, belowSubview: addressLabel)
+        NSLayoutConstraint.activate([
+            addressBackgroundView.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant: -5),
+            addressBackgroundView.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor, constant: -5),
+            addressBackgroundView.trailingAnchor.constraint(equalTo: addressLabel.trailingAnchor, constant: 5),
+            addressBackgroundView.bottomAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 5)
+        ])
     }
     
     override func viewDidLoad() {
@@ -101,7 +127,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last! // we are sure we have at least one location there
-        print(location)
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
+            guard let placemark = placemarks?.last, let street = placemark.thoroughfare, let city = placemark.locality else {
+                self?.addressLabel.text = "Address not found"
+                return
+            }
+            
+            self?.addressLabel.text = "\(city), \(street)"
+        }
     }
     
     let hares = [
