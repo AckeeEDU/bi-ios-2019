@@ -23,6 +23,8 @@
 		886F66F4234DBD9600FAE4D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F2234DBD9600FAE4D6 /* Main.storyboard */; };
 		886F66F6234DBD9A00FAE4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F5234DBD9A00FAE4D6 /* Assets.xcassets */; };
 		886F66F9234DBD9A00FAE4D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */; };
+		88B169F2238523280066CE70 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B169F1238523280066CE70 /* MapViewController.swift */; };
+		88B169F4238533970066CE70 /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B169F3238533970066CE70 /* MapAnnotations.swift */; };
 		B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */; };
 		B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1CB236990D4007A6FA5 /* Shape.swift */; };
 		B42DC1D223699A5D007A6FA5 /* ShapeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1D123699A5D007A6FA5 /* ShapeService.swift */; };
@@ -51,6 +53,8 @@
 		886F66F5234DBD9A00FAE4D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		886F66F8234DBD9A00FAE4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		886F66FA234DBD9A00FAE4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88B169F1238523280066CE70 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		88B169F3238533970066CE70 /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
 		B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		B42DC1CB236990D4007A6FA5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B42DC1D123699A5D007A6FA5 /* ShapeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeService.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				B42DC1CB236990D4007A6FA5 /* Shape.swift */,
 				69CDF7F5237B1219000CDC21 /* TableSection.swift */,
 				69CDF7ED237AF0C2000CDC21 /* User.swift */,
+				88B169F3238533970066CE70 /* MapAnnotations.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				69CDF7E6237AC8A1000CDC21 /* 08 ScrollViews */,
+				88B169F1238523280066CE70 /* MapViewController.swift */,
 				886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */,
 				4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */,
 				4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */,
@@ -250,7 +256,9 @@
 				B4DEE2D123606F710087DFAE /* ActionViewModel.swift in Sources */,
 				4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */,
 				B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */,
+				88B169F2238523280066CE70 /* MapViewController.swift in Sources */,
 				69CDF7E8237AC8B7000CDC21 /* ScrollViewController.swift in Sources */,
+				88B169F4238533970066CE70 /* MapAnnotations.swift in Sources */,
 				69CDF7EC237AECFC000CDC21 /* CollectionViewController.swift in Sources */,
 				886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */,
 				B4DEE2CF2360602E0087DFAE /* ShapeView.swift in Sources */,
