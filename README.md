@@ -112,4 +112,16 @@ branch: 08-scrollviews
     - pracuje na bázi snapshotů - chci naplnit view daty ➡️ vytvořím snapshot ➡️ data source snapshot aplikuje
     - je nutné, aby modelové objekty implementovaly `Hashable` ➡️ data source využívá hashovanou hodnotu pro výpočet změn, které je třeba aplikovat při změně snapshotu
 
+## 9. MapKit & Location
+branch: `09-maps`
 
+- frameworky MapKit a CoreLocation
+- `MKMapView`
+- `CLLocationManager`
+  - získání povolení od uživatele (`NSLocationWhenInUseUsageDescription` v Info.plist)
+  - start/stop získávání pozice
+  - `CLLocationManagerDelegate`
+- protokol `MKAnnotation`
+- správa pinů na mapě, custom piny
+- callouts
+- geocoding/reverse geocoding - překlad GPS lokace na adresu a zpět
