@@ -22,10 +22,10 @@ final class RecipeDetailViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 if let recipeDetail = self?.recipeDetail {
                     self?.loading.stopAnimating()
-                    self?.titleLabel.text = recipeDetail.name
-                    self?.descriptionLabel.text = recipeDetail.description
-                    self?.infoLabel.text = recipeDetail.info
-                    self?.ingredientsLabel.text = recipeDetail.ingredients.joined(separator: "\n")
+                    self?.titleLabel.text = recipeDetail.name.trimmingCharacters(in: .whitespacesAndNewlines)
+                    self?.descriptionLabel.text = recipeDetail.description.trimmingCharacters(in: .whitespacesAndNewlines)
+                    self?.infoLabel.text = recipeDetail.info.trimmingCharacters(in: .whitespacesAndNewlines)
+                    self?.ingredientsLabel.text = recipeDetail.ingredients.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
                 }
             }
         }
