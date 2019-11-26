@@ -28,4 +28,15 @@ extension RecipeDetail: Codable {
         case info
         case ingredients
     }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        identifier = try container.decode(String.self, forKey: .identifier)
+        name = try container.decode(String.self, forKey: .name)
+        description = try container.decode(String.self, forKey: .description)
+        duration = try container.decode(Int.self, forKey: .duration)
+        score = try container.decode(Double.self, forKey: .score)
+        info = try container.decode(String.self, forKey: .info)
+        ingredients = try container.decodeIfPresent([String].self, forKey: .ingredients) ?? []
+    }
 }
