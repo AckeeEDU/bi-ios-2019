@@ -28,6 +28,7 @@
 		A33FB9D6238D5F4800D83CA2 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FB9D5238D5F4800D83CA2 /* RecipesViewController.swift */; };
 		A33FB9D9238D5F8300D83CA2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FB9D8238D5F8300D83CA2 /* APIService.swift */; };
 		A33FB9DB238D778300D83CA2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FB9DA238D778300D83CA2 /* Recipe.swift */; };
+		A3FEFFB9238D7CC400831413 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEFFB8238D7CC400831413 /* RecipeDetailViewController.swift */; };
 		B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */; };
 		B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1CB236990D4007A6FA5 /* Shape.swift */; };
 		B42DC1D223699A5D007A6FA5 /* ShapeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1D123699A5D007A6FA5 /* ShapeService.swift */; };
@@ -61,6 +62,7 @@
 		A33FB9D5238D5F4800D83CA2 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipesViewController.swift; path = "ExampleApp/ViewConttrollers/10 Networking/RecipesViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A33FB9D8238D5F8300D83CA2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A33FB9DA238D778300D83CA2 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = ExampleApp/Models/Recipe.swift; sourceTree = SOURCE_ROOT; };
+		A3FEFFB8238D7CC400831413 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		B42DC1CB236990D4007A6FA5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B42DC1D123699A5D007A6FA5 /* ShapeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeService.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A33FB9D5238D5F4800D83CA2 /* RecipesViewController.swift */,
+				A3FEFFB8238D7CC400831413 /* RecipeDetailViewController.swift */,
 			);
 			path = "10 Networking";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				69CDF7EC237AECFC000CDC21 /* CollectionViewController.swift in Sources */,
 				886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */,
 				A33FB9DB238D778300D83CA2 /* Recipe.swift in Sources */,
+				A3FEFFB9238D7CC400831413 /* RecipeDetailViewController.swift in Sources */,
 				B4DEE2CF2360602E0087DFAE /* ShapeView.swift in Sources */,
 				B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */,
 				4B43BF0A2357186500ABDBF6 /* AutolayoutViewController.swift in Sources */,

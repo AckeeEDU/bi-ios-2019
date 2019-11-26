@@ -43,6 +43,7 @@ final class RecipesViewController: UIViewController {
         navigationItem.title = "Recipes"
 
         tableView.dataSource = self
+        tableView.delegate = self
 
         APIService.shared.fetchRecipes { [weak self] in self?.recipes = $0 }
     }
@@ -60,5 +61,15 @@ extension RecipesViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = "\(recipe.duration) min"
         cell.accessoryType = .disclosureIndicator
         return cell
+    }
+}
+
+extension RecipesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let recipe = recipes[indexPath.row]
+        let controller = RecipeDetailViewController(recipe: recipe)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
