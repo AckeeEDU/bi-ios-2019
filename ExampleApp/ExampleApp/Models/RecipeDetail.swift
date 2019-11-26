@@ -15,7 +15,7 @@ struct RecipeDetail {
     let duration: Int
     let score: Double
     let info: String
-    let ingredients: [String]
+    let ingredients: [Ingredient]
 }
 
 extension RecipeDetail: Codable {
@@ -37,6 +37,6 @@ extension RecipeDetail: Codable {
         duration = try container.decode(Int.self, forKey: .duration)
         score = try container.decode(Double.self, forKey: .score)
         info = try container.decode(String.self, forKey: .info)
-        ingredients = try container.decodeIfPresent([String].self, forKey: .ingredients) ?? []
+        ingredients = try container.decodeIfPresent([Ingredient].self, forKey: .ingredients) ?? []
     }
 }

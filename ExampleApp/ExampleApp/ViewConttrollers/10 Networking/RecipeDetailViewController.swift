@@ -25,7 +25,7 @@ final class RecipeDetailViewController: UIViewController {
                     self?.titleLabel.text = recipeDetail.name.trimmingCharacters(in: .whitespacesAndNewlines)
                     self?.descriptionLabel.text = recipeDetail.description.trimmingCharacters(in: .whitespacesAndNewlines)
                     self?.infoLabel.text = recipeDetail.info.trimmingCharacters(in: .whitespacesAndNewlines)
-                    self?.ingredientsLabel.text = recipeDetail.ingredients.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
+                    self?.ingredientsLabel.text = recipeDetail.ingredients.map { $0.text }.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
                 }
             }
         }
