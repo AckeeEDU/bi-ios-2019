@@ -15,6 +15,8 @@ final class APIService {
     func fetchRecipes() {
         let url = URL(string: "https://cookbook.ack.ee/api/v1/recipes")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            let json = try! JSONSerialization.jsonObject(with: data!)
+            print("[JSON]", json)
             print("[DATA]", data)
             print("[RESPONSE]", response)
             print("[ERROR]", error)
