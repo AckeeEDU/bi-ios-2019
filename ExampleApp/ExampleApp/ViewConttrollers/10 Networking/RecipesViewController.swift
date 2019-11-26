@@ -11,6 +11,13 @@ import UIKit
 final class RecipesViewController: UIViewController {
 
     private weak var tableView: UITableView!
+    private var recipes: [Recipe] = [] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
 
     // MARK: - Lifecycle
 
@@ -34,18 +41,20 @@ final class RecipesViewController: UIViewController {
 
         tableView.dataSource = self
 
-        APIService.shared.fetchRecipes()
+        APIService.shared.fetchRecipes { [weak self] in self?.recipes = $0 }
     }
 }
 
 extension RecipesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return recipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Cell \(indexPath.row + 1)"
+        let recipe = recipes[indexPath.row]
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        cell.textLabel?.text = recipe.name
+        cell.detailTextLabel?.text = "\(recipe.duration) min"
         cell.accessoryType = .disclosureIndicator
         return cell
     }

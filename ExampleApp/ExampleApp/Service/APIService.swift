@@ -12,14 +12,14 @@ struct Recipe: Decodable {
     let id: String
     let name: String
     let duration: Int
-    let score: Int
+    let score: Double
 }
 
 final class APIService {
     static let shared = APIService()
     private init() { }
 
-    func fetchRecipes() {
+    func fetchRecipes(_ completion: @escaping (([Recipe]) -> Void)) {
         let url = URL(string: "https://cookbook.ack.ee/api/v1/recipes")!
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
@@ -33,7 +33,7 @@ final class APIService {
             }
 
             let result = try! JSONDecoder().decode([Recipe].self, from: data)
-            print(result)
+            completion(result)
         }
         task.resume()
     }
