@@ -8,13 +8,6 @@
 
 import Foundation
 
-struct Recipe: Decodable {
-    let id: String
-    let name: String
-    let duration: Int
-    let score: Double
-}
-
 final class APIService {
     static let shared = APIService()
     private init() { }
