@@ -33,6 +33,8 @@ final class RecipesViewController: UIViewController {
         navigationItem.title = "Recipes"
 
         tableView.dataSource = self
+
+        APIService.shared.fetchRecipes()
     }
 }
 
