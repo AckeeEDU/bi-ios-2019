@@ -17,6 +17,19 @@ final class RecipeDetailViewController: UIViewController {
     private weak var ingredientsLabel: UILabel!
 
     private let recipe: Recipe
+    private var recipeDetail: RecipeDetail? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                if let recipeDetail = self?.recipeDetail {
+                    self?.loading.stopAnimating()
+                    self?.titleLabel.text = recipeDetail.name
+                    self?.descriptionLabel.text = recipeDetail.description
+                    self?.infoLabel.text = recipeDetail.info
+                    self?.ingredientsLabel.text = recipeDetail.ingredients.joined(separator: "\n")
+                }
+            }
+        }
+    }
 
     // MARK: - Initialization
 
@@ -68,6 +81,16 @@ final class RecipeDetailViewController: UIViewController {
         ingredientsLabel.numberOfLines = 0
         self.ingredientsLabel = ingredientsLabel
 
+        let scrollView = UIScrollView()
+        view.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
         let contentView = UIStackView(arrangedSubviews: [
             titleLabel,
             descriptionLabel,
@@ -76,13 +99,22 @@ final class RecipeDetailViewController: UIViewController {
         ])
         contentView.axis = .vertical
         contentView.spacing = 15
-        view.addSubview(contentView)
+        contentView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        contentView.isLayoutMarginsRelativeArrangement = true
+        scrollView.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: view.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 15)
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        APIService.shared.fetchRecipeDetail(recipe: recipe) { [weak self] in self?.recipeDetail = $0 }
     }
 }

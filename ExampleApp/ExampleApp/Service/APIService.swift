@@ -30,4 +30,23 @@ final class APIService {
         }
         task.resume()
     }
+
+    func fetchRecipeDetail(recipe: Recipe, _ completion: @escaping ((RecipeDetail) -> Void)) {
+        let url = URL(string: "https://cookbook.ack.ee/api/v1/recipes/\(recipe.identifier)")!
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print(error)
+                return
+            }
+
+            guard let data = data else {
+                print("[NO DATA]")
+                return
+            }
+
+            let result = try! JSONDecoder().decode(RecipeDetail.self, from: data)
+            completion(result)
+        }
+        task.resume()
+    }
 }

@@ -29,6 +29,7 @@
 		A33FB9D9238D5F8300D83CA2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FB9D8238D5F8300D83CA2 /* APIService.swift */; };
 		A33FB9DB238D778300D83CA2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FB9DA238D778300D83CA2 /* Recipe.swift */; };
 		A3FEFFB9238D7CC400831413 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEFFB8238D7CC400831413 /* RecipeDetailViewController.swift */; };
+		A3FEFFBB238DB3E500831413 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FEFFBA238DB3E500831413 /* RecipeDetail.swift */; };
 		B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */; };
 		B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1CB236990D4007A6FA5 /* Shape.swift */; };
 		B42DC1D223699A5D007A6FA5 /* ShapeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1D123699A5D007A6FA5 /* ShapeService.swift */; };
@@ -63,6 +64,7 @@
 		A33FB9D8238D5F8300D83CA2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A33FB9DA238D778300D83CA2 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = ExampleApp/Models/Recipe.swift; sourceTree = SOURCE_ROOT; };
 		A3FEFFB8238D7CC400831413 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		A3FEFFBA238DB3E500831413 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeDetail.swift; path = ExampleApp/Models/RecipeDetail.swift; sourceTree = "<group>"; };
 		B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		B42DC1CB236990D4007A6FA5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B42DC1D123699A5D007A6FA5 /* ShapeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeService.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		886F66E0234DBD9600FAE4D6 = {
 			isa = PBXGroup;
 			children = (
+				A3FEFFBA238DB3E500831413 /* RecipeDetail.swift */,
 				886F66EB234DBD9600FAE4D6 /* ExampleApp */,
 				886F66EA234DBD9600FAE4D6 /* Products */,
 			);
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4DEE2C9235F8F190087DFAE /* ActionViewController.swift in Sources */,
+				A3FEFFBB238DB3E500831413 /* RecipeDetail.swift in Sources */,
 				69CDF7EA237AD658000CDC21 /* TableViewController.swift in Sources */,
 				886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */,
 				69CDF7F4237B11EF000CDC21 /* NativeCell.swift in Sources */,
