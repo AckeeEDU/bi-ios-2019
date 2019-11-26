@@ -25,6 +25,7 @@
 		886F66F9234DBD9A00FAE4D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886F66F7234DBD9A00FAE4D6 /* LaunchScreen.storyboard */; };
 		88B169F2238523280066CE70 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B169F1238523280066CE70 /* MapViewController.swift */; };
 		88B169F4238533970066CE70 /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B169F3238533970066CE70 /* MapAnnotations.swift */; };
+		A33FB9D4238D5D8400D83CA2 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FB9D3238D5D8400D83CA2 /* RecipesViewController.swift */; };
 		B42DC1C92369845D007A6FA5 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */; };
 		B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1CB236990D4007A6FA5 /* Shape.swift */; };
 		B42DC1D223699A5D007A6FA5 /* ShapeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42DC1D123699A5D007A6FA5 /* ShapeService.swift */; };
@@ -55,6 +56,7 @@
 		886F66FA234DBD9A00FAE4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B169F1238523280066CE70 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		88B169F3238533970066CE70 /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
+		A33FB9D3238D5D8400D83CA2 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipesViewController.swift; path = ExampleApp/Service/RecipesViewController.swift; sourceTree = SOURCE_ROOT; };
 		B42DC1C82369845D007A6FA5 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		B42DC1CB236990D4007A6FA5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B42DC1D123699A5D007A6FA5 /* ShapeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeService.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		B42DC1CD236991AD007A6FA5 /* ViewConttrollers */ = {
 			isa = PBXGroup;
 			children = (
+				A33FB9D3238D5D8400D83CA2 /* RecipesViewController.swift */,
 				69CDF7E6237AC8A1000CDC21 /* 08 ScrollViews */,
 				88B169F1238523280066CE70 /* MapViewController.swift */,
 				886F66F0234DBD9600FAE4D6 /* BubblesViewController.swift */,
@@ -259,6 +262,7 @@
 				88B169F2238523280066CE70 /* MapViewController.swift in Sources */,
 				69CDF7E8237AC8B7000CDC21 /* ScrollViewController.swift in Sources */,
 				88B169F4238533970066CE70 /* MapAnnotations.swift in Sources */,
+				A33FB9D4238D5D8400D83CA2 /* RecipesViewController.swift in Sources */,
 				69CDF7EC237AECFC000CDC21 /* CollectionViewController.swift in Sources */,
 				886F66EF234DBD9600FAE4D6 /* SceneDelegate.swift in Sources */,
 				B4DEE2CF2360602E0087DFAE /* ShapeView.swift in Sources */,

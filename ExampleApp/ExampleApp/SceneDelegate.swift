@@ -45,8 +45,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let diffableTableVC = DiffableTableViewController()
         diffableTableVC.tabBarItem = UITabBarItem(title: "Diffable TableView", image: UIImage(systemName: "list.dash"), selectedImage: nil)
+
+        let recipesVC = UINavigationController(rootViewController: RecipesViewController())
+        recipesVC.tabBarItem = UITabBarItem(title: "Recipes", image: UIImage(systemName: "list.dash"), selectedImage: nil)
         
-        tabBarVC.viewControllers = [mapViewController, vc1, vc2, vc3, scrollVC, tableVC, collectionVC, diffableTableVC]
+        tabBarVC.viewControllers = [recipesVC, mapViewController, vc1, vc2, vc3, scrollVC, tableVC, collectionVC, diffableTableVC]
 
         let navVC = UINavigationController(rootViewController: tabBarVC)
         navVC.isNavigationBarHidden = true
