@@ -34,7 +34,6 @@ final class RecipesViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
 
-        
         self.tableView = tableView
     }
 

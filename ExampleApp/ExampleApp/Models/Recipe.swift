@@ -8,9 +8,18 @@
 
 import Foundation
 
-struct Recipe: Decodable {
-    let id: String
+struct Recipe {
+    let identifier: String
     let name: String
     let duration: Int
     let score: Double
+}
+
+extension Recipe: Codable {
+    enum CodingKeys: String, CodingKey {
+        case identifier = "id"
+        case name
+        case duration
+        case score
+    }
 }
