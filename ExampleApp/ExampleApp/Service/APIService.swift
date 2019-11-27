@@ -49,4 +49,23 @@ final class APIService {
         }
         task.resume()
     }
+
+    func rate(_ score: Int, recipe: Recipe, _ completion: @escaping (() -> Void)) {
+        let url = URL(string: "https://cookbook.ack.ee/api/v1/recipes/\(recipe.identifier)/ratings")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let data = ["score": score]
+        request.httpBody = try! JSONSerialization.data(withJSONObject: data)
+
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print(error)
+                return
+            }
+
+            completion()
+        }
+        task.resume()
+    }
 }

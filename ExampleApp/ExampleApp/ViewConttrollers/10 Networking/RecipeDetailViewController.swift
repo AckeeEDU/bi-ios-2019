@@ -12,6 +12,7 @@ final class RecipeDetailViewController: UIViewController {
 
     private weak var loading: UIActivityIndicatorView!
     private weak var titleLabel: UILabel!
+    private weak var scoreLabel: UILabel!
     private weak var descriptionLabel: UILabel!
     private weak var infoLabel: UILabel!
     private weak var ingredientsLabel: UILabel!
@@ -23,6 +24,7 @@ final class RecipeDetailViewController: UIViewController {
                 if let recipeDetail = self?.recipeDetail {
                     self?.loading.stopAnimating()
                     self?.titleLabel.text = recipeDetail.name.trimmingCharacters(in: .whitespacesAndNewlines)
+                    self?.scoreLabel.text = "Score: \(recipeDetail.score)"
                     self?.descriptionLabel.text = recipeDetail.description.trimmingCharacters(in: .whitespacesAndNewlines)
                     self?.infoLabel.text = recipeDetail.info.trimmingCharacters(in: .whitespacesAndNewlines)
                     self?.ingredientsLabel.text = recipeDetail.ingredients.map { $0.text }.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
@@ -66,6 +68,10 @@ final class RecipeDetailViewController: UIViewController {
         titleLabel.font = .preferredFont(forTextStyle: .title1)
         self.titleLabel = titleLabel
 
+        let scoreLabel = UILabel()
+        scoreLabel.font = .preferredFont(forTextStyle: .footnote)
+        self.scoreLabel = scoreLabel
+
         let descriptionLabel = UILabel()
         descriptionLabel.font = .preferredFont(forTextStyle: .body)
         descriptionLabel.numberOfLines = 0
@@ -93,6 +99,7 @@ final class RecipeDetailViewController: UIViewController {
 
         let contentView = UIStackView(arrangedSubviews: [
             titleLabel,
+            scoreLabel,
             descriptionLabel,
             infoLabel,
             ingredientsLabel
@@ -112,9 +119,34 @@ final class RecipeDetailViewController: UIViewController {
         ])
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "Detail inzerátu"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Ohodnotit", style: .plain, target: self, action: #selector(ratingButtonTapped))
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         APIService.shared.fetchRecipeDetail(recipe: recipe) { [weak self] in self?.recipeDetail = $0 }
+    }
+
+    // MARK: - Actions
+
+    @objc
+    private func ratingButtonTapped(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Hodnocení receptu", message: nil, preferredStyle: .alert)
+        [1, 2, 3, 4, 5].forEach { score in
+            let action = UIAlertAction(title: "\(score)", style: .default) { [weak self] _ in
+                guard let recipe = self?.recipe else { return }
+                APIService.shared.rate(score, recipe: recipe) {
+                    APIService.shared.fetchRecipeDetail(recipe: recipe) { self?.recipeDetail = $0 }
+                }
+            }
+            alertController.addAction(action)
+        }
+
+        present(alertController, animated: true)
     }
 }
