@@ -23,6 +23,8 @@ class AuthorsViewController: UIViewController {
       
         title = "The List of Authors"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        reloadData()
     }
     
     // MARK: - Actions
@@ -50,20 +52,35 @@ class AuthorsViewController: UIViewController {
     }
     
     // MARK: - Coredata
-       func save(name: String) {
+    func save(name: String) {
          
-            let managedContext = AppDelegate.viewContext
+        let managedContext = AppDelegate.viewContext
          
-            let author = Author(context: managedContext)
-            author.name = name
+        let author = Author(context: managedContext)
+        author.name = name
            
-           do {
-               try managedContext.save()
-               authors.append(author)
-           } catch let error as NSError {
-               print("Could not save. \(error), \(error.userInfo)")
-           }
-       }
+        do {
+            try managedContext.save()
+            authors.append(author)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func reloadData() {
+        
+        let managedContext = AppDelegate.viewContext
+        
+        let fetchRequest: NSFetchRequest<Author> = Author.fetchRequest()
+        
+        do {
+            authors = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource
