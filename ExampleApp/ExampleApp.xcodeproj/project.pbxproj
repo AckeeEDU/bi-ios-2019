@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		159464D1239D843D009BACDB /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159464D0239D843D009BACDB /* AuthorsViewController.swift */; };
 		16EDF232A4BE1BA970FEE95B /* Pods_ExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCA156E7BEC3B95E4B3C99A /* Pods_ExampleApp.framework */; };
 		4B43BF0A2357186500ABDBF6 /* AutolayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */; };
 		4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		01820E80F67EE7A55F37782C /* Pods-ExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.debug.xcconfig"; path = "Target Support Files/Pods-ExampleApp/Pods-ExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		159464D0239D843D009BACDB /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutViewController.swift; sourceTree = "<group>"; };
 		4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutedBubblesVC.swift; sourceTree = "<group>"; };
 		4BD19116FEEF5822DC620A38 /* Pods-ExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.release.xcconfig"; path = "Target Support Files/Pods-ExampleApp/Pods-ExampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 				8DCA156E7BEC3B95E4B3C99A /* Pods_ExampleApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		159464CF239D8413009BACDB /* 11 CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				159464D0239D843D009BACDB /* AuthorsViewController.swift */,
+			);
+			path = "11 CoreData";
 			sourceTree = "<group>";
 		};
 		1AB3F7BA2D171C6889C461A7 /* Pods */ = {
@@ -182,6 +192,7 @@
 		B42DC1CD236991AD007A6FA5 /* ViewConttrollers */ = {
 			isa = PBXGroup;
 			children = (
+				159464CF239D8413009BACDB /* 11 CoreData */,
 				69CDF7E6237AC8A1000CDC21 /* 08 ScrollViews */,
 				A33FB9D7238D5F5200D83CA2 /* 10 Networking */,
 				88B169F1238523280066CE70 /* MapViewController.swift */,
@@ -352,6 +363,7 @@
 				B4DEE2D123606F710087DFAE /* ActionViewModel.swift in Sources */,
 				4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */,
 				B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */,
+				159464D1239D843D009BACDB /* AuthorsViewController.swift in Sources */,
 				88B169F2238523280066CE70 /* MapViewController.swift in Sources */,
 				A3FEFFBD238DB6F100831413 /* Ingredient.swift in Sources */,
 				69CDF7E8237AC8B7000CDC21 /* ScrollViewController.swift in Sources */,

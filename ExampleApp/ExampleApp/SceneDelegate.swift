@@ -49,7 +49,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let recipesVC = UINavigationController(rootViewController: RecipesViewController())
         recipesVC.tabBarItem = UITabBarItem(title: "Recipes", image: UIImage(systemName: "list.dash"), selectedImage: nil)
         
-        tabBarVC.viewControllers = [recipesVC, mapViewController, vc1, vc2, vc3, scrollVC, tableVC, collectionVC, diffableTableVC]
+        let authorsVC = storyboard.instantiateViewController(identifier: "AuthorsViewController")
+        authorsVC.tabBarItem = UITabBarItem(title: "CoreData", image: UIImage(systemName: "list.dash"), selectedImage: nil)
+        
+        tabBarVC.viewControllers = [recipesVC, mapViewController, vc1, vc2, vc3, scrollVC, tableVC, collectionVC, diffableTableVC, authorsVC]
 
         let navVC = UINavigationController(rootViewController: tabBarVC)
         navVC.isNavigationBarHidden = true
