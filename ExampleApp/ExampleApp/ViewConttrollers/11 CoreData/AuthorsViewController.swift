@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AuthorsViewController: UIViewController {
     
@@ -14,7 +15,7 @@ class AuthorsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
-    var authors: [String] = []
+    var authors: [NSManagedObject] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class AuthorsViewController: UIViewController {
                 return
             }
         
-            self.authors.append(name)
+            self.save(name: name)
             self.tableView.reloadData()
         }
       
@@ -47,6 +48,25 @@ class AuthorsViewController: UIViewController {
       
         present(alert, animated: true)
     }
+    
+    // MARK: - Coredata
+       func save(name: String) {
+         
+           let managedContext = AppDelegate.viewContext
+         
+           let entity = NSEntityDescription.entity(forEntityName: "Author", in: managedContext)!
+         
+           let author = NSManagedObject(entity: entity, insertInto: managedContext)
+         
+           author.setValue(name, forKeyPath: "name")
+           
+           do {
+               try managedContext.save()
+               authors.append(author)
+           } catch let error as NSError {
+               print("Could not save. \(error), \(error.userInfo)")
+           }
+       }
 }
 
 // MARK: - UITableViewDataSource
@@ -59,7 +79,7 @@ extension AuthorsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = authors[indexPath.row]
+        cell.textLabel?.text = authors[indexPath.row].value(forKey: "name") as? String
         return cell
     }
 }
