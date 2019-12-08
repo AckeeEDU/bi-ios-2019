@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Article" representedClassName="Article" syncable="YES" codeGenerationType="class">
+    <entity name="Article" representedClassName="Article" syncable="YES" codeGenerationType="category">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="articles" inverseEntity="Author"/>
     </entity>
-    <entity name="Author" representedClassName="Author" syncable="YES" codeGenerationType="class">
+    <entity name="Author" representedClassName="Author" syncable="YES" codeGenerationType="category">
         <attribute name="identifier" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="author" inverseEntity="Article"/>

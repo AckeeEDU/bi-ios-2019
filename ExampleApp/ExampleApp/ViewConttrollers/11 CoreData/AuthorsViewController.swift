@@ -15,7 +15,7 @@ class AuthorsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
-    var authors: [NSManagedObject] = []
+    var authors: [Author] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -52,13 +52,10 @@ class AuthorsViewController: UIViewController {
     // MARK: - Coredata
        func save(name: String) {
          
-           let managedContext = AppDelegate.viewContext
+            let managedContext = AppDelegate.viewContext
          
-           let entity = NSEntityDescription.entity(forEntityName: "Author", in: managedContext)!
-         
-           let author = NSManagedObject(entity: entity, insertInto: managedContext)
-         
-           author.setValue(name, forKeyPath: "name")
+            let author = Author(context: managedContext)
+            author.name = name
            
            do {
                try managedContext.save()
@@ -79,7 +76,7 @@ extension AuthorsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = authors[indexPath.row].value(forKey: "name") as? String
+        cell.textLabel?.text = authors[indexPath.row].name
         return cell
     }
 }

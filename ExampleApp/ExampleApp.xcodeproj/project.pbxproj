@@ -10,6 +10,8 @@
 		159464D1239D843D009BACDB /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159464D0239D843D009BACDB /* AuthorsViewController.swift */; };
 		159464D3239D8872009BACDB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159464D2239D8872009BACDB /* CoreData.framework */; };
 		159464D6239D892E009BACDB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 159464D4239D892E009BACDB /* Model.xcdatamodeld */; };
+		159464DC239D8EFC009BACDB /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159464D8239D8EFC009BACDB /* Article+CoreDataClass.swift */; };
+		159464DE239D8EFC009BACDB /* Author+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159464DA239D8EFC009BACDB /* Author+CoreDataClass.swift */; };
 		16EDF232A4BE1BA970FEE95B /* Pods_ExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCA156E7BEC3B95E4B3C99A /* Pods_ExampleApp.framework */; };
 		4B43BF0A2357186500ABDBF6 /* AutolayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */; };
 		4BA4CCF2235857EC0004A9C8 /* AutolayoutedBubblesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */; };
@@ -49,6 +51,8 @@
 		159464D0239D843D009BACDB /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		159464D2239D8872009BACDB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		159464D5239D892E009BACDB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		159464D8239D8EFC009BACDB /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		159464DA239D8EFC009BACDB /* Author+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4B43BF092357186500ABDBF6 /* AutolayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutViewController.swift; sourceTree = "<group>"; };
 		4BA4CCF1235857EC0004A9C8 /* AutolayoutedBubblesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutedBubblesVC.swift; sourceTree = "<group>"; };
 		4BD19116FEEF5822DC620A38 /* Pods-ExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleApp.release.xcconfig"; path = "Target Support Files/Pods-ExampleApp/Pods-ExampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +115,19 @@
 		159464CF239D8413009BACDB /* 11 CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				159464D7239D8EB2009BACDB /* Entities */,
 				159464D0239D843D009BACDB /* AuthorsViewController.swift */,
 			);
 			path = "11 CoreData";
+			sourceTree = "<group>";
+		};
+		159464D7239D8EB2009BACDB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				159464D8239D8EFC009BACDB /* Article+CoreDataClass.swift */,
+				159464DA239D8EFC009BACDB /* Author+CoreDataClass.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		1AB3F7BA2D171C6889C461A7 /* Pods */ = {
@@ -361,6 +375,7 @@
 				886F66F1234DBD9600FAE4D6 /* BubblesViewController.swift in Sources */,
 				69CDF7F4237B11EF000CDC21 /* NativeCell.swift in Sources */,
 				A33FB9D6238D5F4800D83CA2 /* RecipesViewController.swift in Sources */,
+				159464DC239D8EFC009BACDB /* Article+CoreDataClass.swift in Sources */,
 				69CDF7F0237B0FBC000CDC21 /* DiffableTableViewController.swift in Sources */,
 				69CDF7F2237B11D0000CDC21 /* CustomCell.swift in Sources */,
 				69CDF7F6237B1219000CDC21 /* TableSection.swift in Sources */,
@@ -372,6 +387,7 @@
 				B42DC1CC236990D4007A6FA5 /* Shape.swift in Sources */,
 				159464D1239D843D009BACDB /* AuthorsViewController.swift in Sources */,
 				88B169F2238523280066CE70 /* MapViewController.swift in Sources */,
+				159464DE239D8EFC009BACDB /* Author+CoreDataClass.swift in Sources */,
 				159464D6239D892E009BACDB /* Model.xcdatamodeld in Sources */,
 				A3FEFFBD238DB6F100831413 /* Ingredient.swift in Sources */,
 				69CDF7E8237AC8B7000CDC21 /* ScrollViewController.swift in Sources */,
