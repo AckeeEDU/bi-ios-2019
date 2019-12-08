@@ -117,4 +117,23 @@ extension ArticlesViewController: UITableViewDataSource {
         cell.textLabel?.text = articles[indexPath.row].text
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let managedContext = AppDelegate.viewContext
+        
+        let article = articles[indexPath.row]
+
+        if editingStyle == .delete {
+            managedContext.delete(article)
+
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Error While Deleting Note: \(error.userInfo)")
+            }
+        }
+        
+        self.reloadData()
+    }
 }
