@@ -1,5 +1,5 @@
 //
-//  AuthorsViewController.swift
+//  ArticlesViewController.swift
 //  ExampleApp
 //
 //  Created by Lukáš Tesař on 08/12/2019.
@@ -9,35 +9,36 @@
 import UIKit
 import CoreData
 
-class AuthorsViewController: UIViewController {
+class ArticlesViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
-    var authors: [Author] = []
+    var articles: [Article] = []
+    var author: Author?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        title = "The List of Authors"
+        title = "The List of Articles"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         reloadData()
     }
     
     // MARK: - Actions
-    @IBAction func addAuthor(_ sender: UIBarButtonItem) {
-      
-        let alert = UIAlertController(title: "New Author", message: "Add a new author", preferredStyle: .alert)
+    @IBAction func addArticle(_ sender: UIBarButtonItem) {
+        
+        let alert = UIAlertController(title: "New Article", message: "Add a new article", preferredStyle: .alert)
       
         let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
-            guard let textField = alert.textFields?.first, let name = textField.text else {
+            guard let textField = alert.textFields?.first, let text = textField.text else {
                 return
             }
         
-            self.save(name: name)
+            self.save(text: text)
             self.tableView.reloadData()
         }
       
@@ -52,16 +53,22 @@ class AuthorsViewController: UIViewController {
     }
     
     // MARK: - Coredata
-    func save(name: String) {
+    func save(text: String) {
+        
+        guard let author = author else {
+            return
+        }
          
         let managedContext = AppDelegate.viewContext
          
-        let author = Author(context: managedContext)
-        author.name = name
+        let article = Article(context: managedContext)
+        article.text = text
+        article.created = Date()
+        article.author = author
            
         do {
             try managedContext.save()
-            authors.append(author)
+            articles.append(article)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -69,44 +76,45 @@ class AuthorsViewController: UIViewController {
     
     func reloadData() {
         
-        let managedContext = AppDelegate.viewContext
+        guard let author = author else {
+            return
+        }
         
-        let fetchRequest: NSFetchRequest<Author> = Author.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "articles.@count > 0")
+        let managedContext = AppDelegate.viewContext
+               
+        let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+        
+        let yesterday = Date(timeIntervalSinceNow: -24*60*60)
+        let predicate1 = NSPredicate(format: "created > %@", argumentArray: [yesterday])
+        let predicate2 = NSPredicate(format: "author == %@", author)
+        let predicates = [predicate1, predicate2]
+        let andPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        fetchRequest.predicate = andPredicate
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
         
         do {
-            authors = try managedContext.fetch(fetchRequest)
+            articles = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        
+//        articles = author.articles?.allObjects as! [Article]
         
         tableView.reloadData()
     }
 }
 
 // MARK: - UITableViewDataSource
-extension AuthorsViewController: UITableViewDataSource, UITableViewDelegate {
+extension ArticlesViewController: UITableViewDataSource {
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return authors.count
+        return articles.count
     }
   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = authors[indexPath.row].name
+        cell.textLabel?.text = articles[indexPath.row].text
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let articlesVC = storyboard.instantiateViewController(identifier: "ArticlesViewController") as? ArticlesViewController else {
-            return
-        }
-        
-        articlesVC.author = authors[indexPath.row]
-        
-        navigationController?.pushViewController(articlesVC, animated: true)
     }
 }
