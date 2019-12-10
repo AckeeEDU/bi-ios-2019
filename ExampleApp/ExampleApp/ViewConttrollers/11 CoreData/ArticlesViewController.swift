@@ -16,7 +16,7 @@ class ArticlesViewController: UIViewController {
     
     // MARK: - Variables
     var articles: [Article] = []
-    var author: Author?
+    var authorObjectId: NSManagedObjectID?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -55,10 +55,10 @@ class ArticlesViewController: UIViewController {
     // MARK: - Coredata
     func save(text: String) {
         
-        guard let author = author else {
+        guard let authorObjectId = authorObjectId, let author = AppDelegate.viewContext.registeredObject(for: authorObjectId) as? Author else {
             return
         }
-         
+        
         let managedContext = AppDelegate.viewContext
          
         let article = Article(context: managedContext)
@@ -76,7 +76,7 @@ class ArticlesViewController: UIViewController {
     
     func reloadData() {
         
-        guard let author = author else {
+        guard let authorObjectId = authorObjectId, let author = AppDelegate.viewContext.registeredObject(for: authorObjectId) as? Author else {
             return
         }
         
@@ -97,9 +97,7 @@ class ArticlesViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
-//        articles = author.articles?.allObjects as! [Article]
-        
+    
         tableView.reloadData()
     }
 }

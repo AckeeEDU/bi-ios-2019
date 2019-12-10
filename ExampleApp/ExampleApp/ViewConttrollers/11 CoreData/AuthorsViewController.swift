@@ -105,7 +105,7 @@ extension AuthorsViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         
-        articlesVC.author = authors[indexPath.row]
+        articlesVC.authorObjectId = authors[indexPath.row].objectID
         
         navigationController?.pushViewController(articlesVC, animated: true)
     }
