@@ -125,3 +125,19 @@ branch: `09-maps`
 - správa pinů na mapě, custom piny
 - callouts
 - geocoding/reverse geocoding - překlad GPS lokace na adresu a zpět
+
+## 10. Networking
+
+`TODO`
+
+## 11. CoreData
+
+`TODO`
+
+## 12. SwiftUI
+branch: `12-swift-ui`
+
+- ukázka nového přístupu k UI od iOS 13
+- obsahuje 2 example projekty 
+    1. **SwiftUIExampleLesson** tak jak byl  prezentován na cviku
+    2. **SwiftUIExample** obsahuje nějaké drobnosti pro inspiraci navíc
