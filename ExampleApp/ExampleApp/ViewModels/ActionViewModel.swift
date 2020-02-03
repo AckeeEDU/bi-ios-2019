@@ -18,7 +18,7 @@ protocol ActionViewModel {
     
     var shapes : [Shape] {get}
     var overview : String {get}
-    var didUpdate : () -> () {get set}
+    var didUpdate : (ActionViewModel) -> () {get set}
     
     func createShape(position : CGPoint) -> ShapeView
     func removeShape(withTag tag: Int)
@@ -32,15 +32,15 @@ class ActionViewModelImpl : ActionViewModel {
     var shapeService: ShapeService
         
     var selectedColor : UIColor = .red {
-        didSet { didUpdate() }
+        didSet { didUpdate(self) }
     }
     var selectedSize : Float = 10 {
         didSet {
-            didUpdate()
+            didUpdate(self)
         }
     }
     var selectedShape : Int = 0 {
-        didSet { didUpdate() }
+        didSet { didUpdate(self) }
     }
     var indexCounter = 0
 
@@ -55,7 +55,7 @@ class ActionViewModelImpl : ActionViewModel {
         }
     }
     
-    var didUpdate : () -> () = {}
+    var didUpdate : (ActionViewModel) -> () = { _ in }
     
     init(shapeService : ShapeService) {
         self.shapeService = shapeService
@@ -73,29 +73,29 @@ class ActionViewModelImpl : ActionViewModel {
         indexCounter += 1
         let shape = Shape(tag: rect.tag, color: selectedColor, size: selectedSize, origin: position)
         shapeService.addShape(shape: shape)
-        didUpdate()
+        didUpdate(self)
 
         return rect
     }
     
     @IBAction func colorForControl(_ sender: UISegmentedControl) {
-        didUpdate()
+        didUpdate(self)
     }
     
     @objc func sizeForControl(_ sender: UISlider) {
         selectedSize = sender.value
-        didUpdate()
+        didUpdate(self)
     }
     
     @objc func shapeForControl(_ sender: UISegmentedControl) {
         selectedShape = sender.selectedSegmentIndex
-        didUpdate()
+        didUpdate(self)
     }
     
     func removeShape(withTag tag: Int) {
         guard let shape = shapeService.findShape(tag: tag) else { return }
         shapeService.removeShape(shape: shape)
-        didUpdate()
+        didUpdate(self)
     }
 
 
